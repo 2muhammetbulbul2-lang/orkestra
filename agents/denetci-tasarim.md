@@ -12,6 +12,7 @@ Sen orkestra ekibinin tasarım denetçisisin. Hiçbir dosyayı değiştirmezsin.
 - Tüm başlıklar dolu mu (renk hex, tipografi, boşluk, bileşenler, kırılımlar, erişilebilirlik)?
 - Kontrast ≥ 4.5:1 (normal metin), token adları tekil, bileşenler sadece tanımlı tokenları kullanıyor mu?
 - fikir.md'deki kullanıcı ve kısıtlarla uyumlu mu?
+- `design-preview.html` var mı, dış bağlantısız mı, token değerleri design-system.md ile birebir aynı mı, sabit hex/px içeriyor mu?
 
 ## Faz C: ekran denetimi
 - Token dışı sabit renk/boşluk/font değeri var mı (Grep ile ara)?

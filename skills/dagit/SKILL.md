@@ -11,12 +11,14 @@ argument-hint: "[revize notu]"
 Revize notu (varsa): $ARGUMENTS
 
 ## 1. Hazırlık
-- `fikir.md` ve `CLAUDE.md` oku. fikir.md yoksa dur ve `/orkestra:fikir` öner.
+- Proje kökünde `CLAUDE.md` yoksa önce kurulumu çalıştır:
+  `node "${CLAUDE_PLUGIN_ROOT}/scripts/yeni-proje.mjs" "${CLAUDE_PROJECT_DIR}"`
+- `fikir.md` ve `CLAUDE.md` oku. fikir.md boşsa dur ve `/orkestra:fikir` öner.
 - Varsa mevcut `roadmap.md` ve `progress.md` oku (revize ise sürümü 1 artır).
 
 ## 2. roadmap.md üret
 `${CLAUDE_PLUGIN_ROOT}/templates/roadmap.md` biçimini kullan:
-- **Faz A:** tek görev, ajan `tasarim-sistemi`, sahip `design-system.md`.
+- **Faz A:** tek görev, ajan `tasarim-sistemi`, sahip `design-system.md` + `design-preview.html`.
 - **Faz B:** fikir.md'deki her özellik için bağımsız modüller; ajan `kod-modul`; her modüle **ayrı** klasör (örn. `src/todos/**`).
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
 - Her görev: ID, faz, ajan, sahip klasör, bağımlılık, denetçiler
@@ -34,7 +36,8 @@ Sorun varsa roadmap.md'yi düzelt ve Kapı 1'i tekrarla. Sonucu "Kapı kayıtlar
 
 ## 4. Kapı 2 — kullanıcı onayı
 Kullanıcıya göster: görev tablosu + mermaid + Kapı 1 sonucu. Sor: **"Onay mı, revize mi?"**
-- **Onay:** durumu `ONAYLI` yap, Kapı 2'ye tarih yaz, progress.md'de "Aktif faz: A" yap. `/orkestra:faz-calistir A` öner.
+- **Onay:** durumu `ONAYLI` yap, Kapı 2'ye tarih yaz, progress.md'de "Aktif faz: A" yap. Şunu söyle ve dur:
+  "Şimdi `/clear` yaz, sonra `/orkestra:faz-calistir A`." Fazı kendiliğinden başlatma.
 - **Revize:** notu al, **2. adıma dön**. Kullanıcı fikri değiştirmek isterse `/orkestra:fikir` öner.
 
 Kod yazma; sadece roadmap.md ve progress.md'yi güncelle.

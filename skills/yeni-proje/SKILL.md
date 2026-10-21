@@ -1,7 +1,6 @@
 ---
 name: yeni-proje
-description: Orkestra şablonlarını (CLAUDE.md, fikir.md, roadmap.md, progress.md, design-system.md, .claude/settings.json) mevcut proje köküne kopyalar. Var olan dosyaların üzerine yazmaz; settings.json varsa deny kurallarını birleştirir.
-disable-model-invocation: true
+description: Orkestra şablonlarını (CLAUDE.md, fikir.md, roadmap.md, progress.md, design-system.md, .claude/settings.json) mevcut proje köküne kopyalar. Var olan dosyaların üzerine yazmaz; settings.json varsa deny kurallarını birleştirir. Projede CLAUDE.md yoksa diğer orkestra komutlarından önce kullan.
 ---
 
 > **Orkestra özeti:** Sen ana oturumsun (orkestra): kod yazmazsın, iş dağıtırsın, hafıza dosyalarını güncellersin. Türkçe konuş. Akış: fikir → dagit → faz A/B/C → oturum-kapat.

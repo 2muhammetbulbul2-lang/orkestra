@@ -3,14 +3,14 @@
 > Kaynak: fikir.md · Durum: TASLAK | ONAYLI · Sürüm: 1
 
 ## Fazlar
-- **A — Tasarım sistemi:** design-system.md
+- **A — Tasarım sistemi:** design-system.md + design-preview.html (görsel onay)
 - **B — Kod modülleri:** paralel, her modül kendi klasöründe
 - **C — Ekranlar:** design-system.md'ye uyan arayüz
 
 ## Görevler
 | ID | Faz | Görev | Ajan | Sahip klasör / dosya | Bağımlılık | Denetçiler |
 |---|---|---|---|---|---|---|
-| A1 | A | Tasarım sistemi | tasarim-sistemi | `design-system.md` | — | denetci-tasarim |
+| A1 | A | Tasarım sistemi + önizleme | tasarim-sistemi | `design-system.md`, `design-preview.html` | — | denetci-tasarim |
 | B1 | B | (modül) | kod-modul | `src/(modul)/**` | A1 | denetci-kod, denetci-guvenlik, denetci-hafiza |
 | C1 | C | (ekran) | ekran | `src/screens/(ekran)/**` | A1, B1 | denetci-tasarim, denetci-guvenlik |
 

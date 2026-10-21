@@ -40,7 +40,7 @@
 - Kullanıcıyla ve ajanlarla **Türkçe** konuşulur.
 
 ### Roller
-- **Orkestra = ana oturum.** Kod yazmaz, geniş dosya taraması yapmaz. Planlar, iş dağıtır, sonuçları birleştirir, sadece hafıza dosyalarını (`fikir.md`, `roadmap.md`, `progress.md`) günceller.
+- **Orkestra = ana oturum.** Kod yazmaz, geniş dosya taraması yapmaz, tarayıcı/görsel testi kendisi yapmaz. Planlar, iş dağıtır, sonuçları birleştirir, sadece hafıza dosyalarını (`fikir.md`, `roadmap.md`, `progress.md`) günceller.
 - **İş dağıtıcı = `/orkestra:dagit` skill'i**, ana oturumda çalışır. Ayrı ajan değildir.
 - **Üreticiler:** `orkestra:tasarim-sistemi`, `orkestra:kod-modul`, `orkestra:ekran`.
 - **Denetçiler (salt okunur):** `orkestra:denetci-kod`, `orkestra:denetci-tasarim`, `orkestra:denetci-guvenlik`, `orkestra:denetci-hafiza`.
@@ -54,9 +54,15 @@
 2. `/orkestra:dagit` → `roadmap.md` (fazlar, görevler, ajan, sahip klasör, bağımlılık, mermaid)
 3. **Kapı 1:** orkestra roadmap'i fikir.md ile karşılaştırır (eksik görev, çakışan sahiplik).
    **Kapı 2:** kullanıcıya sunulur. "Revize" → 1. adıma dönülür.
-4. `/orkestra:faz-calistir A` → `B` → `C`, sırayla. Önceki faz onaylanmadan sonraki başlamaz.
+4. `/orkestra:faz-calistir A` → `B` → `C`, sırayla, **her çağrıda bir faz**. Önceki faz onaylanmadan sonraki başlamaz.
+   Faz A sonunda kullanıcı `design-preview.html` dosyasını açar ve tek seferde onay/revize der.
 5. Faz C bitince sonuç kullanıcıya sunulur.
 6. `/orkestra:oturum-kapat` → progress.md, commit mesajı önerisi, `/compact` veya `/clear` önerisi.
+
+### Token tasarrufu
+- Her faz sonunda progress.md **bir kez** yazılır, orkestra durur ve kullanıcıya `/clear` + sonraki komutu söyler.
+- Sonraki faza kendiliğinden geçilmez.
+- progress.md tek başına yeterli olmalı: yeni oturum hiçbir şey hatırlamadan devam edebilir.
 
 ### Üretici döngüsü
 - araştır → yap → test et → rapor ver.
@@ -66,8 +72,8 @@
 - Denetçi çıktısı sadece: **KARAR: ONAY | RET** + madde madde gerekçe.
 
 ### Ret limiti
-- RET → iş, gerekçeyle aynı ajana döner.
-- Aynı iş **2. kez** RET alırsa durur ve kullanıcıya gelir. Üçüncü deneme yapılmaz.
+- 1. RET → iş, gerekçeyle aynı ajana bir kez döner.
+- Aynı iş **2. kez** RET alırsa durur ve kullanıcıya gelir. **Üçüncü düzeltme turu ve üçüncü denetim yapılmaz.**
 - Ret sayısı `progress.md` içindeki "Ret sayaçları" tablosunda tutulur.
 
 ### Dosya sahipliği

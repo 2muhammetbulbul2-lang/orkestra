@@ -11,9 +11,11 @@ flowchart TD
   D --> K1{"Kapı 1: Orkestra<br/>tutarlılık"}
   K1 --> K2{"Kapı 2: Sen<br/>onay / revize"}
   K2 -- revize --> D
-  K2 -- onay --> A["Faz A: tasarim-sistemi → design-system.md"]
+  K2 -- onay --> A["Faz A: tasarim-sistemi → design-system.md + design-preview.html"]
   A --> DA[denetci-tasarim]
-  DA --> B["Faz B: kod-modul × N (paralel)"]
+  DA --> KA{"Sen: önizlemeyi aç<br/>onay / revize"}
+  KA -- revize --> A
+  KA -- onay --> B["Faz B: kod-modul × N (paralel)"]
   B --> DB["denetci-kod + denetci-guvenlik + denetci-hafiza"]
   DB -- "RET (≤2)" --> B
   DB --> C["Faz C: ekran"]
@@ -34,6 +36,7 @@ Kurallar:
 - Denetçiler **ONAY / RET + gerekçe** döner.
 - Aynı iş 2. kez reddedilirse durur ve sana gelir.
 - Her üretici sadece roadmap'te kendisine atanan klasöre yazar.
+- Her faz sonunda orkestra progress.md'yi yazar ve durur. Sen `/clear` yazıp sonraki fazı başlatırsın. Böylece ana oturumun bağlamı küçük kalır.
 
 ## Kurulum
 
@@ -55,7 +58,7 @@ CLI ile yalnız tek bir oturumda denemek için: `claude --plugin-dir ./orkestra`
 
 ## Komutlar
 
-Eklenti skill'leri eklenti adıyla çağrılır:
+Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: biri bitince sonrakini çalıştır, hepsini tek mesajda yapıştırma.
 
 | Komut | Ne yapar |
 |---|---|
@@ -78,8 +81,12 @@ Eklenti skill'leri eklenti adıyla çağrılır:
 > /orkestra:fikir Basit bir yapılacaklar uygulaması
 > /orkestra:dagit
   (roadmap'i incele → "onay")
+> /clear
 > /orkestra:faz-calistir A
+  (design-preview.html'i tarayıcıda aç → "onay")
+> /clear
 > /orkestra:faz-calistir B
+> /clear
 > /orkestra:faz-calistir C
 > /orkestra:oturum-kapat
 ```
@@ -94,6 +101,8 @@ Doldurulmuş örnekler için bkz. [examples/fikir.md](examples/fikir.md) ve [exa
 - Lint/test hook'u yalnız `package.json` script'lerini tanır (Node projeleri). Başka ekosistemlerde sessizce geçer.
 - Stop hatırlatması `systemMessage` ile gösterilir. Bazı arayüzlerde görünmeyebilir.
 - Hook'lar `node` gerektirir.
+- `/clear` ve `/compact` yalnız kullanıcı tarafından çalıştırılabilir. Orkestra bunları yalnızca önerir.
+- Alt ajanlar bitince ana oturum her seferinde yeniden uyanır. Bu yüzden çok sayıda paralel görev ana oturumda da token harcar.
 
 ## Lisans
 
