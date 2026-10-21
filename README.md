@@ -40,7 +40,7 @@ Kurallar:
 GitHub'dan kurmak için:
 
 ```
-/plugin marketplace add muhammetbulbul/orkestra
+/plugin marketplace add 2muhammetbulbul2-lang/orkestra
 /plugin install orkestra@orkestra
 ```
 

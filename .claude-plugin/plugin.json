@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Fikirden yol haritasına, fazlı üretim ve denetçi onaylı çoklu ajan iş akışı (Türkçe).",
   "author": {
-    "name": "muhammetbulbul"
+    "name": "2muhammetbulbul2-lang"
   },
-  "homepage": "https://github.com/muhammetbulbul/orkestra",
-  "repository": "https://github.com/muhammetbulbul/orkestra",
+  "homepage": "https://github.com/2muhammetbulbul2-lang/orkestra",
+  "repository": "https://github.com/2muhammetbulbul2-lang/orkestra",
   "license": "MIT",
   "keywords": ["agents", "orchestration", "roadmap", "review", "turkish"]
 }
