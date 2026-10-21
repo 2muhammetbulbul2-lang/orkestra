@@ -1,0 +1,14 @@
+{
+  "name": "orkestra",
+  "owner": {
+    "name": "muhammetbulbul"
+  },
+  "plugins": [
+    {
+      "name": "orkestra",
+      "source": ".",
+      "description": "Fikirden yol haritasına, fazlı üretim ve denetçi onaylı çoklu ajan iş akışı (Türkçe).",
+      "version": "0.1.0"
+    }
+  ]
+}
