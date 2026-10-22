@@ -31,7 +31,8 @@ Amaç: kullanıcının aklındakini **tahmin etmeden** öğrenmek ve seçimleri 
    Araştırılacak konular: (3-4 madde: benzer ürünler, seçilecek bileşenler, UX/görsel kalıplar)
    Çıktı sınırı: Sadece "Değişen dosyalar / Özet (en fazla 5 madde)" döndür.
    ```
-   - Kullanıcı "araştırma gerekmez" derse veya fikir çok küçükse bu adımı atla ve bir satırla söyle.
+   - Araştırmayı kullanıcıya **net ve kısa** sor, belirsiz sorular sorma. Örnek: "Benzer ürünlere ve ücretli/ücretsiz seçeneklere bakıp 1 sayfalık, kaynaklı bir özet çıkarayım mı? (yaklaşık 1-2 dk). Önerim: evet." Seçenekler: Evet (önerilen) / Hayır.
+   - Kullanıcı "hayır" derse veya fikir çok küçükse bu adımı atla, bir satırla söyle ve `fikir.md` "Kararlar"a "Araştırma: yapılmadı" yaz. (Faz A'da yalnız kısa bir görsel referans araştırması yine önerilir.)
    - Orkestra web'de kendisi aramaz; sonucu `arastirma.md`den okur.
 
 4. **Tur 2 — seçimler.** `arastirma.md`deki "Kullanıcıya sorulacaklar"ı ve tabloları kullanıcıya **kısa** sun: seçenekler, ücretsiz/ücretli farkı, artı/eksi, kaynak. Seçenekli sor. Verilen kararları `fikir.md` "Kararlar" tablosuna yaz (karar, seçilen, neden).

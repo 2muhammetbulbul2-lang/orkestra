@@ -18,6 +18,8 @@ Görev metni hangi modda çalışacağını söyler. Mod yoksa **TAM** say.
 Kullanıcı seçebilsin diye 3 farklı tasarım yönü gösterirsin; `design-system.md` **yazmazsın**.
 1. `fikir.md` (özellikle "His ve görünüm" ve "Kararlar"), varsa `arastirma.md` ve `roadmap.md`'yi oku. Referansları kullan.
 2. `design-yonler.html` yaz. Tek dosya, dış bağlantısız (CDN, font, script yok; sistem fontları), çift tıkla açılır:
+   - **Sayfanın en üstünde "Brif" bölümü** (en fazla 8 satır): kim kullanacak ve hangi anda, ürünün tek cümlelik hissi, **3 yönün hangi eksende ayrıştığı** (örn. yumuşak ↔ cesur ↔ sade) ve neden bu eksenin seçildiği. Bilgiyi `fikir.md` ve `arastirma.md`'den al.
+   - **Her yönde "Neden bu yön?" kutusu** (3-4 madde): neden bu renkler (renk ne hissettirir, kullanıcıya/ürüne neden uyar), neden bu yazı karakteri ve köşe/gölge dili, benzer ürün veya referans, artısı ve eksisi. `arastirma.md`'den gelen bilgiyi kaynağıyla an ("kaynak: arastirma.md"). Dayanak yoksa "ajanın yorumu, araştırmasız" diye açıkça işaretle; uydurma örnek ürün veya istatistik yazma.
    - **3 yön**, her biri belirgin biçimde farklı (örn. sakin/yumuşak, canlı/cesur, sade/editoryal). Her yön: numara (1, 2, 3), ad, tek cümlelik his, 5-6 renkli palet (ad + hex), tipografi örneği, ana ekrandan **gerçek içerikle** küçük bir kesit (fikir.md'deki özellikler).
    - Her yönde açık/koyu tema düğmesi; yönler yan yana (dar ekranda alt alta).
    - Her yön kendi kapsamlı CSS değişkenlerini kullanır (`.yon1`, `.yon2`, `.yon3`); sayfada kapsam dışı sabit renk yok.

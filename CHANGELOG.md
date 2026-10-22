@@ -1,5 +1,11 @@
 # Değişiklik günlüğü
 
+## [0.3.1] - 2026-10-22
+### Değişti
+- `design-yonler.html`: üstte Brif (kim için, yönler hangi eksende ayrışıyor, neden) ve her yönde "Neden bu yön?" gerekçesi (renk, yazı, referans, artı/eksi). Dayanak yoksa "araştırmasız" diye işaretlenir.
+- Faz A öncesi kısa görsel referans araştırması (`arastirmaci`, en fazla 3 arama); orkestra yönleri gerekçeleriyle sunar.
+- `fikir`: araştırma sorusu net ve kısa sorulur, önerilen seçenek belirtilir.
+
 ## [0.3.0] - 2026-10-22
 ### Eklendi
 - Yeni `arastirmaci` ajanı (web araması, kaynaklı `arastirma.md`): benzer ürünler, ücretli/ücretsiz seçenekler, UX ve görsel kalıplar. Fiyat doğrulanamazsa "doğrulanmadı" yazar.

@@ -52,8 +52,9 @@ Düzeltme sonrası sadece RET veren denetçiyi yeniden çağır.
 
 ## 4. Faz A'ya özel: önce yön seçimi, sonra tam tasarım
 **Aşama 1 — yön (denetçi yok, hızlı):**
-1. `orkestra:tasarim-sistemi`'ni görev metnine `MOD: YÖN` ekleyerek çağır. Ajan `design-yonler.html` üretir (3 farklı yön, gerçek içerikli kesitler).
-2. Kullanıcıya **tek mesajda** sun: dosya yolu (tarayıcıda aç) + 3 yönün birer cümlelik özeti. Sor: **"1, 2 veya 3 mü? Karışım da olur (örn. 1'in renkleri, 3'ün fontu) ya da 'hiçbiri' + notun."**
+0. **Görsel referans araştırması (kısa):** `arastirma.md` yoksa veya "UX ve görsel kalıplar" bölümü boşsa, `orkestra:arastirmaci`'yı çağır. Konular: bu tür ürünlerde yaygın renk, his ve yerleşim; 2-3 benzer ürünün görsel dili; hedef kitleye uygun tonlar. En fazla 3 arama. Kullanıcı açıkça "araştırma gerekmez" dediyse (fikir.md "Kararlar") atla ve brifin "araştırmasız" olduğunu söyle.
+1. `orkestra:tasarim-sistemi`'ni görev metnine `MOD: YÖN` ekleyerek çağır. Ajan `design-yonler.html` üretir (üstte Brif, her yönde "Neden bu yön?", gerçek içerikli kesitler).
+2. Kullanıcıya **tek mesajda** sun: dosya yolu (tarayıcıda aç) + kısa brif (kim için, hangi eksende 3 yön, neden) + her yön için **bir cümle gerekçe** (neden bu renkler, neden bu his). Gerekçeyi dosyadaki "Neden bu yön?" kutularından al, kendin uydurma. Sor: **"1, 2 veya 3 mü? Karışım da olur (örn. 1'in renkleri, 3'ün fontu) ya da 'hiçbiri' + notun."**
 3. "Hiçbiri" ise notu ajana ver, yönleri yeniden üret, yine tek mesajla sun.
 
 **Aşama 2 — tam tasarım:**
