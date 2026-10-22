@@ -72,6 +72,7 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
 | `/orkestra:dagit` | `roadmap.md`yi üretir (fazlar, görevler, sahiplik, mermaid). Ardından Kapı 1 ve Kapı 2'yi uygular. |
 | `/orkestra:faz-calistir A\|B\|C` | Fazı yürütür: dağıtım, denetim ve ret limiti. |
 | `/orkestra:duzelt <sorun>` | Tek bir sorunu düzeltir: dosya sahibi tek üretici, değişiklik türüne uyan tek denetçi. Kapsam birden fazla sahibe yayılıyorsa durur; aynı sorun 2 denemede düzelmezse tahmin yerine kanıt (ekran görüntüsü, hata çıktısı) ister. |
+| `/orkestra:devral` | Çalışan bir projeyi (kendi CLAUDE.md, hafıza ve yol haritasıyla) orkestra düzenine bağlar. Önce salt okunur tarar: şişmiş hafıza, 1000+ satırlık dosyalar, test/CI, sahiplik önerisi. Onayınla yalnız `ORKESTRA.md` ve eksik deny kurallarını ekler; mevcut dosyaların üzerine yazmaz. |
 | `/orkestra:oturum-kapat` | progress.md'yi günceller, commit mesajı önerir, `/compact` veya `/clear` önerir. |
 
 ## Otomatik katman

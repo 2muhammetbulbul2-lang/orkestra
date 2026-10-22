@@ -1,5 +1,10 @@
 # Değişiklik günlüğü
 
+## [0.5.0] - 2026-10-22
+### Eklendi
+- `/orkestra:devral`: çalışan bir projeyi orkestra düzenine bağlar. `scripts/devral-tara.mjs` (salt okunur) mevcut CLAUDE.md, yol haritası, devir notu, hafıza boyutları, test/CI, 1000+ satırlık dosyalar ve üst düzey klasörleri raporlar; şişmiş hafıza yalnız uyarılır. Onaydan sonra `scripts/devral-uygula.mjs` yalnız eksik olanı ekler: `ORKESTRA.md` (kurallar ayrı dosyada, projenin `CLAUDE.md`'sine ancak ayrıca onayla tek satır `@ORKESTRA.md` eklenir) ve eksik deny kuralları. Hiçbir mevcut dosyanın üzerine yazılmaz.
+- `templates/ORKESTRA.proje.md`.
+
 ## [0.4.0] - 2026-10-22
 ### Eklendi
 - `/orkestra:duzelt`: tek sorun, tek üretici, tek denetçi. Orkestra sorunu roadmap sahipliğinden dosya sahibine bağlar, değişiklik türüne göre denetçiyi seçer (görünüm → denetci-tasarim, mantık → denetci-kod, girdi/veri/yetki → denetci-guvenlik). Kapsam birden çok sahibe yayılırsa veya yeni özellikse durur. Aynı sorun 2 denemede düzelmezse tahmin yerine kanıt ister. Sonucu `progress.md` "Düzeltmeler" tablosuna tek satır yazar; doğrulama notu zorunlu.
