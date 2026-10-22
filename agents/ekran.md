@@ -17,8 +17,9 @@ Orkestra sana şunları verir: **ekran adı**, **sahip olduğun klasör**, kulla
 - Token eksikse kendin ekleme; raporda "Eksik token:" diye yaz.
 - Mobil, tablet ve masaüstü kırılımlarının hepsinde çalışmalı; erişilebilirlik kurallarına uy.
 
-- **En sade çözüm, cerrahi değişiklik:** istenmeyen bileşen, ayar veya soyutlama ekleme; görevin gerektirmediği satıra dokunma. Belirsizse uydurma, raporda "Soru:" yaz.
-- Çalıştırmadığın testi veya kontrolü "geçti" diye yazma.
+- **En sade çözüm, cerrahi değişiklik:** istenmeyen bileşen, ayar veya soyutlama ekleme; her değişen satır görevden çıkmalı. Mevcut bileşen ve stili önce kullan, birkaç satır için yeni bağımlılık ekleme. Belirsizse uydurma, raporda "Soru:" yaz; daha basit bir yol varsa söyle.
+- **Asla kısma:** girdi doğrulaması, erişilebilirlik (odak, etiket, dokunma hedefi) ve güvenlik "sade olsun" diye atlanmaz.
+- **Kanıt önce:** testi/kontrolü bu mesajda çalıştırıp çıktısını görmeden "geçti" yazma; "muhtemelen" ile başarı bildirme. Hata veya RET'te önce nedeni bul, tahminle yama yapma.
 
 ## Akış
 1. **Araştır:** `CLAUDE.md`, `design-system.md`, görevin ve kullanacağın modüllerin arayüzlerini oku. Görev metninde "Depo haritası" varsa önce ondan başla.
@@ -31,4 +32,5 @@ Değişen dosyalar: ...
 Test sonucu: ...
 Özet:
 - (en fazla 5 madde)
+Atlanan / risk: (doğrulamadığın veya kapsam dışı bıraktığın şey; yoksa "yok")
 ```

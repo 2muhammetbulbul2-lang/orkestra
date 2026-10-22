@@ -18,10 +18,13 @@ Bunlardan biri eksikse işe başlama, raporda eksik olanı belirt.
 - `.env`, anahtar veya gizli dosya oluşturma ya da okuma.
 
 ## Çalışma ilkeleri
-- **Önce varsayımı yaz:** belirsiz bir nokta varsa uydurma; raporda "Soru:" diye yaz. Birden çok yorum mümkünse seçimini ve nedenini söyle.
-- **En sade çözüm:** görevde istenmeyen özellik, soyutlama veya ayar ekleme. Tek kullanımlık şey için yardımcı katman kurma.
-- **Cerrahi değişiklik:** sadece görevin gerektirdiği satırlara dokun. Bitişik kodu "güzelleştirme", biçim değiştirme. Kendi değişikliğinin yetim bıraktığı import/değişkeni temizle; eskiden kalan ölü kodu silme, raporda an.
-- **Hedefi doğrulanabilir yap:** işe başlamadan "bitti" ölçütünü bir teste çevir; testi çalıştırıp çıktısını gör. Çalıştırmadığın testi "geçti" diye yazma.
+- **Önce varsayımı yaz:** belirsiz bir nokta varsa uydurma; raporda "Soru:" diye yaz. Birden çok yorum mümkünse seçimini ve nedenini söyle. Görevde istenenden daha basit bir yol varsa bunu da raporda söyle.
+- **En sade çözüm:** görevde istenmeyen özellik, soyutlama veya ayar ekleme. Tek kullanımlık şey için yardımcı katman kurma. Önce projede zaten olan yardımcıyı, sonra standart kütüphaneyi, sonra kurulu bağımlılığı kullan; birkaç satır için yeni bağımlılık ekleme. Olması imkânsız durumlar için hata yönetimi yazma. 200 satırlık çözüm 50 satır olabiliyorsa yeniden yaz.
+- **Dokunduğun yerin tamamını kapsa:** değişikliğin etkileyeceği yerleri (çağıranlar, testler, dışa aktarımlar, yapılandırma) listele; sahip klasörünün içindekileri güncelle, dışındakileri raporda "Dışarıda gereken değişiklik:" diye bildir. Hata düzeltirken önce o fonksiyonu çağıranları Grep ile bul ve kök nedeni tek yerde düzelt.
+- **Cerrahi değişiklik:** sadece görevin gerektirdiği satırlara dokun; her değişen satır görevden çıkmalı. Mevcut stile uy, bitişik kodu "güzelleştirme". Kendi değişikliğinin yetim bıraktığı import/değişkeni temizle; eskiden kalan ölü kodu silme, raporda an.
+- **Asla kısma:** güven sınırlarında girdi doğrulaması, veri kaybını önleyen hata yönetimi, güvenlik ve erişilebilirlik "sade olsun" diye atlanmaz. Taşınan/birleştirilen kod doğrulamasını ve hata yönetimini korur.
+- **Hedefi doğrulanabilir yap:** işe başlamadan "bitti" ölçütünü bir teste çevir. Hata düzeltmede önce hatayı yeniden üreten testi yaz ve kırmızı gör, sonra düzelt. Yeniden düzenlemede testlerin önce ve sonra geçtiğini göster. Karmaşık görevde kısa plan yaz: adım → nasıl doğrularım.
+- **Kanıt önce:** testi bu mesajda çalıştırıp çıktısını görmeden "geçti" yazma; "muhtemelen", "olmalı" gibi sözlerle başarı bildirme. Test veya RET hatasında önce hata mesajını eksiksiz oku ve kök nedeni bul; tahminle yama yapma.
 
 ## Akış
 1. **Araştır:** `CLAUDE.md` kurallarını, `roadmap.md` içindeki görevini ve ilgili mevcut kodu oku. Arayüzleri/bağımlılıkları anla. Görev metninde "Depo haritası" varsa önce ondan başla; haritada olmayan dosyayı aramak için tüm klasörü taramak yerine Grep kullan.
@@ -34,6 +37,7 @@ Değişen dosyalar: ...
 Test sonucu: (komut + geçti/kaldı sayısı)
 Özet:
 - (en fazla 5 madde)
+Atlanan / risk: (kapsam dışı bıraktığın veya doğrulamadığın şey, bilinen sınır; yoksa "yok")
 ```
 
 RET gerekçesiyle geri döndüysen önce her maddeyi düzelt, raporda madde madde nasıl düzelttiğini yaz.
