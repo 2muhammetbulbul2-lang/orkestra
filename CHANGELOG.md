@@ -1,5 +1,12 @@
 # Değişiklik günlüğü
 
+## [0.6.0] - 2026-10-22
+### Eklendi
+- **Görsel onay kapısı** (imarmobil'deki "değişikliği ekran görüntüsüyle göster, onay gelmeden ilerleme" akışı): Faz A yön ve önizleme, Faz C her ekran grubu ve görünüm düzeltmeleri (`duzelt`) için. `ekran` ajanı `MOD: KANIT` ile `kanit/` klasörüne mobil/masaüstü ekran görüntüsü üretir; orkestra `goster.mjs` ile kullanıcının varsayılan görüntüleyicisinde açar ve "Onay mı, revize mi?" diye sorar. Onay gelmeden sonraki aşamaya geçilmez.
+- `scripts/ekran-goruntusu.mjs`: projede kurulu Playwright'la ekran görüntüsü (yalnız yerel adres veya proje içi dosya; Playwright/Chromium yoksa kurmaz, nedenini söyler). `scripts/goster.mjs`: proje içi png/jpg/html dosyalarını varsayılan görüntüleyicide açar.
+### Değişti
+- Orkestra rol kuralı: görsel kanıtı `ekran` ajanı üretir, orkestra yalnız kullanıcıya açar (şablonlar, `faz-calistir`, `duzelt`).
+
 ## [0.5.1] - 2026-10-22
 ### Değişti
 - `progress.md` şablonu devir notu biçiminde: Başlarken, Son oturumda ne oldu, Sırada, Açık kararlar, Test komutları (imarmobil DEVIR-NOTU'ndan esinlendi). `oturum-kapat` bu bölümleri günceller.

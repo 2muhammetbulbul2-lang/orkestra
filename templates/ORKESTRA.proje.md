@@ -9,7 +9,7 @@
 - Kullanıcıyla ve ajanlarla **Türkçe** konuşulur.
 
 ### Roller
-- **Orkestra = ana oturum.** Kod yazmaz, geniş dosya taraması yapmaz, tarayıcı/görsel testi kendisi yapmaz. Planlar, iş dağıtır, sonuçları birleştirir, sadece hafıza dosyalarını (`fikir.md`, `roadmap.md`, `progress.md`) günceller.
+- **Orkestra = ana oturum.** Kod yazmaz, geniş dosya taraması yapmaz, tarayıcı/görsel testi kendisi yapmaz; görsel kanıtı (ekran görüntüsü) `ekran` ajanı üretir, orkestra kullanıcıya açar ve görsel onay almadan sonraki aşamaya geçmez. Planlar, iş dağıtır, sonuçları birleştirir, sadece hafıza dosyalarını (`fikir.md`, `roadmap.md`, `progress.md`) günceller.
 - **İş dağıtıcı = `/orkestra:dagit` skill'i**, ana oturumda çalışır. Ayrı ajan değildir.
 - **Araştırmacı:** `orkestra:arastirmaci` (web araması; sadece `arastirma.md` yazar). Fikir aşamasında çağrılır.
 - **Üreticiler:** `orkestra:tasarim-sistemi`, `orkestra:kod-modul`, `orkestra:ekran`.

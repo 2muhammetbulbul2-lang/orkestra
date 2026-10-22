@@ -63,7 +63,8 @@ Neden: yerel testte geçen düzeltme gerçek ortamda tutmayabilir; kök neden ka
 ## 5. Kaydet ve kapat
 1. `progress.md` "Düzeltmeler" tablosuna **tek satır** ekle: tarih · sorun · sahip · denetçi · sonuç (ONAY / 1 RET→ONAY / durdu) · deneme sayısı. Başka bölüme dokunma.
 2. Kullanıcıya kısa özet: kök neden, değişen dosyalar, ölçüt kanıtı, denetçi kararı.
-3. **Doğrulama notu (zorunlu, tek satır):** orkestra görsel veya canlı ortam testi yapmadı; kullanıcının ne yapıp neye bakacağını yaz (örn. "tarayıcıda şunu aç, şu kutu kaybolmuş olmalı"). Görünüm düzeltmesinde "yalnız kod okunarak denetlendi" ifadesini açıkça kullan.
+3. **Görünüm düzeltmesiyse** (CSS, yerleşim, renk, ekran) denetçiden sonra "Görsel onay kapısı"nı (`faz-calistir` §5) çalıştır: `ekran` ajanıyla `MOD: KANIT`, `goster.mjs` ile aç, kullanıcı onaylamadan commit önerme. Kanıt üretilemezse (Playwright yok) aşağıdaki notu kullan.
+   **Doğrulama notu (zorunlu, tek satır):** orkestra görsel veya canlı ortam testi yapmadı; kullanıcının ne yapıp neye bakacağını yaz (örn. "tarayıcıda şunu aç, şu kutu kaybolmuş olmalı"). Görünüm düzeltmesinde "yalnız kod okunarak denetlendi" ifadesini açıkça kullan.
 4. Commit mesajı öner (`duzelt: <özet>`); kullanıcı "commit" derse at. Başka iş açma; `/clear` önermene gerek yok.
 
 Kodu kendin yazma veya düzeltme; her değişiklik ajan üzerinden yapılır.

@@ -22,6 +22,9 @@ Orkestra sana şunları verir: **ekran adı**, **sahip olduğun klasör**, kulla
 - **Paket kurma kuralı:** adı görevde/roadmap'te/`CLAUDE.md`'de geçmeyen yeni bağımlılık ekleme; kurulum başarısız olursa benzer adlı başka paket deneme, dur ve raporda `Soru:` yaz.
 - **Kanıt önce:** testi/kontrolü bu mesajda çalıştırıp çıktısını görmeden "geçti" yazma; "muhtemelen" ile başarı bildirme. Hata veya RET'te önce nedeni bul, tahminle yama yapma.
 
+## MOD: KANIT (yalnız görev metninde varsa)
+Kod değiştirme, ekran yazma. Tek işin görsel kanıt üretmek: görevdeki komutu (`ekran-goruntusu.mjs`) çalıştır, yalnız `kanit/` klasörüne yazılsın. Playwright kurma, indirme yapma; betik "PLAYWRIGHT YOK" veya "CHROMIUM AÇILAMADI" derse aynen raporla ve dur. Dev sunucusunu görevde verilen komutla başlatabilirsin; işin bitince kapat. Rapor: `Yazılan dosyalar / Konsol hatası (varsa) / Sınır (örn. sahte veri)`. Görüntüleri Read ile açıp bakabilirsin ama "güzel görünüyor" gibi yorum yazma, kullanıcı karar verir.
+
 ## Akış
 1. **Araştır:** `CLAUDE.md`, `design-system.md`, görevin ve kullanacağın modüllerin arayüzlerini oku. Görev metninde "Depo haritası" varsa önce ondan başla.
 2. **Yap:** Ekranı yaz.

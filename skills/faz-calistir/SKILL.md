@@ -4,7 +4,7 @@ description: Onaylı roadmap.md'deki bir fazı (A, B veya C) yürütür - görev
 argument-hint: "A | B | C"
 ---
 
-> **Orkestra özeti:** Sen ana oturumsun (orkestra): kod yazmazsın, test/tarayıcı denemesi yapmazsın, iş dağıtırsın. Türkçe konuş. Her üretici sadece kendi klasörüne yazar. 2. RET'te iş durur, kullanıcıya gelir. Faz bitince durursun. Ayrıntı: proje `CLAUDE.md`.
+> **Orkestra özeti:** Sen ana oturumsun (orkestra): kod yazmazsın, test/tarayıcı denemesi yapmazsın, iş dağıtırsın. Görsel kanıtı `ekran` ajanı üretir, sen yalnız kullanıcıya açarsın; görsel onay gelmeden devam etmezsin (bkz. "Görsel onay kapısı"). Türkçe konuş. Her üretici sadece kendi klasörüne yazar. 2. RET'te iş durur, kullanıcıya gelir. Faz bitince durursun. Ayrıntı: proje `CLAUDE.md`.
 
 # /orkestra:faz-calistir $ARGUMENTS
 
@@ -64,18 +64,30 @@ Faz B başlamadan önce testlerin çalışacağından emin ol: kök dosyaların 
 **Aşama 1 — yön (denetçi yok, hızlı):**
 0. **Görsel referans araştırması (kısa):** `arastirma.md` yoksa veya "UX ve görsel kalıplar" bölümü boşsa, `orkestra:arastirmaci`'yı çağır. Konular: bu tür ürünlerde yaygın renk, his ve yerleşim; 2-3 benzer ürünün görsel dili; hedef kitleye uygun tonlar. En fazla 3 arama. Kullanıcı açıkça "araştırma gerekmez" dediyse (fikir.md "Kararlar") atla ve brifin "araştırmasız" olduğunu söyle.
 1. `orkestra:tasarim-sistemi`'ni görev metnine `MOD: YÖN` ekleyerek çağır. Ajan `design-yonler.html` üretir (üstte Brif, her yönde "Neden bu yön?", gerçek içerikli kesitler).
-2. Kullanıcıya **tek mesajda** sun: dosya yolu (tarayıcıda aç) + kısa brif (kim için, hangi eksende 3 yön, neden) + her yön için **bir cümle gerekçe** (neden bu renkler, neden bu his). Gerekçeyi dosyadaki "Neden bu yön?" kutularından al, kendin uydurma. Sor: **"1, 2 veya 3 mü? Karışım da olur (örn. 1'in renkleri, 3'ün fontu) ya da 'hiçbiri' + notun."**
+2. **Görsel onay kapısı'nı** `design-yonler.html` için çalıştır (tam sayfa, mobil + masaüstü). Kullanıcıya **tek mesajda** sun: kanıt görüntüleri + dosya yolu (tarayıcıda aç) + kısa brif (kim için, hangi eksende 3 yön, neden) + her yön için **bir cümle gerekçe** (neden bu renkler, neden bu his). Gerekçeyi dosyadaki "Neden bu yön?" kutularından al, kendin uydurma. Sor: **"1, 2 veya 3 mü? Karışım da olur (örn. 1'in renkleri, 3'ün fontu) ya da 'hiçbiri' + notun."**
 3. "Hiçbiri" ise notu ajana ver, yönleri yeniden üret, yine tek mesajla sun.
 
 **Aşama 2 — tam tasarım:**
 4. Ajanı `MOD: TAM` ve `Seçilen yön: ...` (kullanıcının sözleriyle) ile çağır. Ajan `design-system.md` + `design-preview.html` üretir.
 5. Denetçi ONAY verir (ret limiti geçerli).
-6. Kullanıcıya **tek mesajda** sun: `design-preview.html` (tarayıcıda aç) + 5 maddelik özet. Sor: **"Onay mı, revize mi?"** Revize → notu ajana ver, denetçi tekrar bakar, yine tek mesajla sun.
-- Orkestra görseli kendisi **çizmez**, widget/ekran görüntüsü üretmez.
+6. **Görsel onay kapısı'nı** `design-preview.html` için çalıştır (tam sayfa, mobil + masaüstü). Kullanıcıya **tek mesajda** sun: kanıt görüntüleri + `design-preview.html` (tarayıcıda aç) + 5 maddelik özet. Sor: **"Onay mı, revize mi?"** Revize → notu ajana ver, denetçi tekrar bakar, yine tek mesajla sun.
+- Orkestra görseli kendisi **çizmez**, widget/ekran görüntüsü üretmez; kanıtı `ekran` ajanı üretir.
 
-## 5. Test ve tarayıcı
-- Testleri ajanlar ve denetci-kod çalıştırır. Orkestra tarayıcı açmaz, tıklama/ekran görüntüsü yapmaz.
-- Faz C sonunda kullanıcıya "tarayıcıda şunları dene" diye kısa bir kontrol listesi ve çalıştırma komutunu ver.
+**Faz C'ye özel:** her ekran (veya aynı gruptaki ekranlar) için denetçiler ONAY verdikten sonra **Görsel onay kapısı** çalışır; kullanıcı o ekranı onaylamadan bir sonraki ekran grubuna ve faz sonuna geçilmez.
+
+## 5. Görsel onay kapısı (aşama aşama görsel + onay)
+Ne zaman: Faz A yön ve önizleme, Faz C her ekran grubu. Aynı kapı `/orkestra:duzelt` ile yapılan görünüm düzeltmelerinde de çalışır. Salt mantık/arka uç işinde gerekmez.
+1. **Kanıt üret:** `orkestra:ekran` ajanını **`MOD: KANIT`** ile çağır. Bu modda kod değiştirmez, yalnız `kanit/` klasörüne yazar. Görev metni: hedef (yerel adres veya `design-*.html`), ad, boyutlar. Ajan şunu çalıştırır:
+   `node "${CLAUDE_PLUGIN_ROOT}/scripts/ekran-goruntusu.mjs" "${CLAUDE_PROJECT_DIR}" <hedef> <ad> --boyut mobil,masaustu`
+   Uygulama sunucu gerektiriyorsa çalıştırma komutunu `CLAUDE.md`/`progress.md`'den alır; yoksa `Soru:` yazar. Faz C'de durum/tema farkı varsa (örn. giriş yapılmış, boş liste, koyu tema) bunlar da ayrı kanıt olarak istenir.
+   - Betik "PLAYWRIGHT YOK" / "CHROMIUM AÇILAMADI" derse kanıt üretilemedi: kullanıcıya söyle, kurulumu **kendin yapma** (kullanıcı karar verir), eski yola dön (dosyayı tarayıcıda aç + "görsel olarak doğrulanmadı" notu).
+2. **Kullanıcıya göster:** `node "${CLAUDE_PLUGIN_ROOT}/scripts/goster.mjs" "${CLAUDE_PROJECT_DIR}" kanit/<dosya>.png ...` ile görüntüleri varsayılan görüntüleyicide aç. Bir görüntüyü Read ile okumak yalnız seni gösterir, kullanıcı göremez. Mesajda dosya yollarını, neye bakacağını ve bilinen sınırı yaz (sahte veri, boş harita, gerçek oturum yok). Kanıtta konsol hatası çıktıysa onu da söyle.
+3. **Sor:** "Onay mı, revize mi?" Onay gelmeden sonraki ekrana/faza geçme, commit önerme.
+4. **Revize** → notu aynı üreticiye ver, denetçi tekrar bakar (yalnız stil değiştiyse denetci-tasarim), yeni kanıt üret, yine göster. Aynı ekranda **3. revize** gelirse tahminle devam etme: kullanıcıdan adım adım ne gördüğünü (ekran, cihaz, beklenen/olan) iste.
+5. **Onay** → `progress.md` "Alınan kararlar"a tek satır: `görsel onay: <ekran/yön> (<tarih>)`.
+- `kanit/` klasörü kanıt içindir, commit edilmez (commit önerirken dışarıda bırak, `.gitignore` önerebilirsin).
+- Testleri ajanlar ve denetci-kod çalıştırır. Orkestra tarayıcı açmaz, tıklama yapmaz.
+- Faz C sonunda kullanıcıya ayrıca "tarayıcıda şunları dene" diye kısa bir kontrol listesi ve çalıştırma komutunu ver (etkileşim ve gerçek veri kanıtla anlaşılamaz).
 
 ## 6. Faz sonu: yaz ve DUR
 1. `progress.md`'yi **bir kez** güncelle. Yeni bir oturum hiçbir şey hatırlamadan devam edebilmeli:
