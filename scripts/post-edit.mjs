@@ -9,7 +9,11 @@ const SKIP_DIRS = ['node_modules', 'dist', 'build', '.wrangler', '.git'];
 const SKIP_EXT = ['.md', '.json', '.txt', '.lock', '.svg', '.png', '.jpg'];
 const TIMEOUT_MS = 60_000;
 
+// ORKESTRA_HOOKS: off = hook çalışmaz · minimal = sadece lint · (boş/diğer) = lint + test
+const PROFIL = (process.env.ORKESTRA_HOOKS || '').toLowerCase();
+
 function main() {
+  if (PROFIL === 'off') return 0;
   const input = JSON.parse(readFileSync(0, 'utf8') || '{}');
   const project = resolve(process.env.CLAUDE_PROJECT_DIR || input.cwd || process.cwd());
   const filePath = input.tool_input?.file_path;
@@ -25,7 +29,7 @@ function main() {
   const scripts = JSON.parse(readFileSync(pkgPath, 'utf8')).scripts || {};
 
   const failures = [];
-  for (const name of ['lint', 'test']) {
+  for (const name of PROFIL === 'minimal' ? ['lint'] : ['lint', 'test']) {
     if (!scripts[name]) continue;
     // name sabit listeden gelir; shell Windows'ta npm.cmd'yi bulmak için gerekli.
     const res = spawnSync(`npm run ${name} --silent`, {

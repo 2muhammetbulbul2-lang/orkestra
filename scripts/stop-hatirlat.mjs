@@ -5,7 +5,7 @@ import { join, resolve } from 'node:path';
 
 try {
   const input = JSON.parse(readFileSync(0, 'utf8') || '{}');
-  if (!input.stop_hook_active) {
+  if (!input.stop_hook_active && (process.env.ORKESTRA_HOOKS || '').toLowerCase() !== 'off') {
     const project = resolve(process.env.CLAUDE_PROJECT_DIR || input.cwd || process.cwd());
     const progress = join(project, 'progress.md');
     if (existsSync(progress) && input.transcript_path && existsSync(input.transcript_path)) {

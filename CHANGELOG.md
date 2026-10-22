@@ -1,5 +1,14 @@
 # Değişiklik günlüğü
 
+## [0.3.3] - 2026-10-22
+### Eklendi
+- `scripts/harita.mjs`: bağımlılıksız, salt okunur depo haritası (dosya, satır sayısı, export adları). `.env`, `*.pem`, `*.key`, `secrets`, `node_modules`, `dist`, `build`, `.wrangler` listelenmez ve okunmaz. `faz-calistir` Faz B/C görevlerine "Depo haritası" olarak ekler.
+- İsteğe bağlı Graphify köprüsü: projede `graphify-out/GRAPH_REPORT.md` varsa `faz-calistir` görev klasörüyle ilgili en fazla 15 satırlık özeti ajanlara verir. Orkestra Graphify'ı kurmaz ve çalıştırmaz; kurulum kullanıcıda kalır.
+- `ORKESTRA_HOOKS` ortam değişkeni: `off` iki hook'u kapatır, `minimal` yalnız `lint` çalıştırır, boşsa eski davranış.
+### Değişti
+- `kod-modul`, `ekran`: çalışma ilkeleri (varsayımı yaz, en sade çözüm, cerrahi değişiklik, çalıştırmadığın testi "geçti" yazma). `denetci-kod`: kapsam taşması ve rapor-gerçek uyuşması kontrolleri.
+- `faz-calistir`: Faz C'de düzeltme yalnız stil dosyalarını değiştirdiyse sadece `denetci-tasarim` yeniden çağrılır.
+
 ## [0.3.2] - 2026-10-22
 ### Düzeltildi (gerçek uçtan uca testten)
 - `dagit`: `package.json` gibi kök dosyalar için sahip atanır (gerekirse B0 iskelet görevi); Kapı 1 bunu da kontrol eder. Önceden kimsenin sahibi olmadığı için `npm test` çalışmıyordu.

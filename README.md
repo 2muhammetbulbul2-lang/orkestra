@@ -77,6 +77,9 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
 
 - **PostToolUse hook:** her Edit/Write sonrasında projenin `package.json` dosyasında `lint`/`test` script'i varsa çalışır (60 sn sınırı). Script yoksa sessizce geçer. Başarısız olursa hatayı Claude'a iletir.
 - **Stop hook:** progress.md bu oturumda değişmediyse hatırlatma gösterir. Oturumu engellemez.
+- **Hook yoğunluğu:** `ORKESTRA_HOOKS=off` iki hook'u da kapatır, `ORKESTRA_HOOKS=minimal` PostToolUse'ta yalnız `lint` çalıştırır (test atlanır). Boşsa lint ve test çalışır.
+- **Depo haritası:** `scripts/harita.mjs` Faz B/C görevlerine kısa bir dosya haritası verir (salt okunur, ağ yok, gizli dosyaları listelemez).
+- **Graphify (isteğe bağlı):** Graphify'ı sen kurarsan (PyPI paketi `graphifyy`, iki "y"; kurulum `~/.claude/` altına yazar, o yüzden orkestra kurmaz) ve projede `graphify-out/GRAPH_REPORT.md` oluşursa `faz-calistir` ilgili özeti ajanlara bağlam olarak verir. Yoksa hiçbir şey değişmez.
 - **permissions.deny** (`/orkestra:yeni-proje` ile projeye eklenir): `.env`, `.env.*`, `*.pem`, `*.key`, `secrets/`, `node_modules/`, `dist/`, `build/`, `.wrangler/` okunmaz.
 
 ## Örnek kullanım

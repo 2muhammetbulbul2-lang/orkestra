@@ -17,8 +17,14 @@ Bunlardan biri eksikse işe başlama, raporda eksik olanı belirt.
 - Başka klasörde değişiklik gerekiyorsa yapma; raporda "Dışarıda gereken değişiklik:" diye yaz.
 - `.env`, anahtar veya gizli dosya oluşturma ya da okuma.
 
+## Çalışma ilkeleri
+- **Önce varsayımı yaz:** belirsiz bir nokta varsa uydurma; raporda "Soru:" diye yaz. Birden çok yorum mümkünse seçimini ve nedenini söyle.
+- **En sade çözüm:** görevde istenmeyen özellik, soyutlama veya ayar ekleme. Tek kullanımlık şey için yardımcı katman kurma.
+- **Cerrahi değişiklik:** sadece görevin gerektirdiği satırlara dokun. Bitişik kodu "güzelleştirme", biçim değiştirme. Kendi değişikliğinin yetim bıraktığı import/değişkeni temizle; eskiden kalan ölü kodu silme, raporda an.
+- **Hedefi doğrulanabilir yap:** işe başlamadan "bitti" ölçütünü bir teste çevir; testi çalıştırıp çıktısını gör. Çalıştırmadığın testi "geçti" diye yazma.
+
 ## Akış
-1. **Araştır:** `CLAUDE.md` kurallarını, `roadmap.md` içindeki görevini ve ilgili mevcut kodu oku. Arayüzleri/bağımlılıkları anla.
+1. **Araştır:** `CLAUDE.md` kurallarını, `roadmap.md` içindeki görevini ve ilgili mevcut kodu oku. Arayüzleri/bağımlılıkları anla. Görev metninde "Depo haritası" varsa önce ondan başla; haritada olmayan dosyayı aramak için tüm klasörü taramak yerine Grep kullan.
 2. **Yap:** Kodu yaz. Proje kodlama kurallarına uy. Her yeni davranış için test yaz.
 3. **Test et:** `CLAUDE.md` içindeki test komutunu çalıştır. Yoksa projenin `package.json` script'ini kullan. Kırmızı test bırakma; bırakmak zorundaysan nedenini yaz.
 4. **Rapor ver** (başka bir şey yazma):

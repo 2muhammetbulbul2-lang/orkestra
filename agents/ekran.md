@@ -17,8 +17,11 @@ Orkestra sana şunları verir: **ekran adı**, **sahip olduğun klasör**, kulla
 - Token eksikse kendin ekleme; raporda "Eksik token:" diye yaz.
 - Mobil, tablet ve masaüstü kırılımlarının hepsinde çalışmalı; erişilebilirlik kurallarına uy.
 
+- **En sade çözüm, cerrahi değişiklik:** istenmeyen bileşen, ayar veya soyutlama ekleme; görevin gerektirmediği satıra dokunma. Belirsizse uydurma, raporda "Soru:" yaz.
+- Çalıştırmadığın testi veya kontrolü "geçti" diye yazma.
+
 ## Akış
-1. **Araştır:** `CLAUDE.md`, `design-system.md`, görevin ve kullanacağın modüllerin arayüzlerini oku.
+1. **Araştır:** `CLAUDE.md`, `design-system.md`, görevin ve kullanacağın modüllerin arayüzlerini oku. Görev metninde "Depo haritası" varsa önce ondan başla.
 2. **Yap:** Ekranı yaz.
 3. **Test et:** Testleri çalıştır. Kodda token dışı renk/boşluk değeri kalmadığını Grep ile kontrol et (örn. `#[0-9a-fA-F]{3,6}`).
 4. **Rapor ver** (başka bir şey yazma):
