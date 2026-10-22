@@ -1,5 +1,15 @@
 # Değişiklik günlüğü
 
+## [0.3.0] - 2026-10-22
+### Eklendi
+- Yeni `arastirmaci` ajanı (web araması, kaynaklı `arastirma.md`): benzer ürünler, ücretli/ücretsiz seçenekler, UX ve görsel kalıplar. Fiyat doğrulanamazsa "doğrulanmadı" yazar.
+- Faz A'da önce `design-yonler.html`: 3 farklı tasarım yönü yan yana, kullanıcı seçer veya karıştırır; sonra tam tasarım ve `design-preview.html`.
+### Değişti
+- `fikir`: derinlemesine görüşme (kullanıcı, senaryo, kapsam, veri, his), turda en fazla 4 seçenekli soru, araştırma turu ve "Kararlar" tablosu. "Açık sorular" boşalmadan fikir tamam sayılmaz.
+- `fikir.md` şablonuna "Kullanıcı ve senaryo", "Veri ve gizlilik", "His ve görünüm" ve "Kararlar" bölümleri eklendi.
+- `dagit`: cevapsız açık soru varsa uyarır; `arastirma.md`yi okur.
+- Token dengesi: araştırma en fazla 6 arama ve 60 satır; yön aşamasında denetçi çalışmaz; küçük fikirlerde araştırma atlanabilir.
+
 ## [0.2.0] - 2026-10-22
 ### Düzeltildi
 - `faz-calistir` ve `yeni-proje` artık model tarafından çağrılabilir. Komutlar tek mesajda verilince bu skill'ler yüklenmiyordu.

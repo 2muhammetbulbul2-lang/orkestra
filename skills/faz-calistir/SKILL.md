@@ -50,11 +50,16 @@ Düzeltme sonrası sadece RET veren denetçiyi yeniden çağır.
   Diğer bağımsız görevler sürebilir.
 - Sayaçları bellekte tut; progress.md'ye faz sonunda (veya durduğunda) yaz.
 
-## 4. Faz A'ya özel: tek adımda görsel onay
-1. Tasarım ajanı `design-system.md` ile birlikte `design-preview.html` üretir.
-2. Önce denetçi ONAY verir (ret limiti geçerli).
-3. Sonra kullanıcıya **tek mesajda** sun: dosya yolu (`design-preview.html`, tarayıcıda aç) + 5 maddelik özet. Sor: **"Onay mı, revize mi?"**
-4. Revize → notu tasarım ajanına ver, denetçi tekrar bakar, yine tek mesajla sun.
+## 4. Faz A'ya özel: önce yön seçimi, sonra tam tasarım
+**Aşama 1 — yön (denetçi yok, hızlı):**
+1. `orkestra:tasarim-sistemi`'ni görev metnine `MOD: YÖN` ekleyerek çağır. Ajan `design-yonler.html` üretir (3 farklı yön, gerçek içerikli kesitler).
+2. Kullanıcıya **tek mesajda** sun: dosya yolu (tarayıcıda aç) + 3 yönün birer cümlelik özeti. Sor: **"1, 2 veya 3 mü? Karışım da olur (örn. 1'in renkleri, 3'ün fontu) ya da 'hiçbiri' + notun."**
+3. "Hiçbiri" ise notu ajana ver, yönleri yeniden üret, yine tek mesajla sun.
+
+**Aşama 2 — tam tasarım:**
+4. Ajanı `MOD: TAM` ve `Seçilen yön: ...` (kullanıcının sözleriyle) ile çağır. Ajan `design-system.md` + `design-preview.html` üretir.
+5. Denetçi ONAY verir (ret limiti geçerli).
+6. Kullanıcıya **tek mesajda** sun: `design-preview.html` (tarayıcıda aç) + 5 maddelik özet. Sor: **"Onay mı, revize mi?"** Revize → notu ajana ver, denetçi tekrar bakar, yine tek mesajla sun.
 - Orkestra görseli kendisi **çizmez**, widget/ekran görüntüsü üretmez.
 
 ## 5. Test ve tarayıcı

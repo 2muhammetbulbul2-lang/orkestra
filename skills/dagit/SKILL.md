@@ -14,11 +14,13 @@ Revize notu (varsa): $ARGUMENTS
 - Proje kökünde `CLAUDE.md` yoksa önce kurulumu çalıştır:
   `node "${CLAUDE_PLUGIN_ROOT}/scripts/yeni-proje.mjs" "${CLAUDE_PROJECT_DIR}"`
 - `fikir.md` ve `CLAUDE.md` oku. fikir.md boşsa dur ve `/orkestra:fikir` öner.
+- fikir.md "Açık sorular" bölümünde cevapsız soru varsa kullanıcıya göster; "açık kalsın" demedikçe önce `/orkestra:fikir` öner.
+- `arastirma.md` varsa oku (kararlar ve seçilen bileşenler görevlere yansısın).
 - Varsa mevcut `roadmap.md` ve `progress.md` oku (revize ise sürümü 1 artır).
 
 ## 2. roadmap.md üret
 `${CLAUDE_PLUGIN_ROOT}/templates/roadmap.md` biçimini kullan:
-- **Faz A:** tek görev, ajan `tasarim-sistemi`, sahip `design-system.md` + `design-preview.html`.
+- **Faz A:** tek görev, ajan `tasarim-sistemi`, sahip `design-system.md` + `design-preview.html` + `design-yonler.html` (önce 3 yön seçimi, sonra tam tasarım).
 - **Faz B:** fikir.md'deki her özellik için bağımsız modüller; ajan `kod-modul`; her modüle **ayrı** klasör (örn. `src/todos/**`).
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
 - Her görev: ID, faz, ajan, sahip klasör, bağımlılık, denetçiler

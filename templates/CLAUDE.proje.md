@@ -42,6 +42,7 @@
 ### Roller
 - **Orkestra = ana oturum.** Kod yazmaz, geniş dosya taraması yapmaz, tarayıcı/görsel testi kendisi yapmaz. Planlar, iş dağıtır, sonuçları birleştirir, sadece hafıza dosyalarını (`fikir.md`, `roadmap.md`, `progress.md`) günceller.
 - **İş dağıtıcı = `/orkestra:dagit` skill'i**, ana oturumda çalışır. Ayrı ajan değildir.
+- **Araştırmacı:** `orkestra:arastirmaci` (web araması; sadece `arastirma.md` yazar). Fikir aşamasında çağrılır.
 - **Üreticiler:** `orkestra:tasarim-sistemi`, `orkestra:kod-modul`, `orkestra:ekran`.
 - **Denetçiler (salt okunur):** `orkestra:denetci-kod`, `orkestra:denetci-tasarim`, `orkestra:denetci-guvenlik`, `orkestra:denetci-hafiza`.
 - Alt ajanlar başka alt ajan başlatmaz; tüm dağıtım ana oturumdan yapılır.
@@ -50,12 +51,12 @@
 - Her yeni oturum önce `roadmap.md` ve `progress.md` dosyalarını okur, kaldığı yerden devam eder.
 
 ### Akış
-1. `/orkestra:fikir` → hayal, amaç, kullanıcı, kısıtlar, başarı ölçütü → `fikir.md`
+1. `/orkestra:fikir` → derinlemesine görüşme (kullanıcı, kapsam, veri, his), gerekirse araştırma (`arastirma.md`: benzerler, ücretli/ücretsiz seçenekler) ve seçenekli kararlar → `fikir.md`. Cevapsız konuda varsayım yapılmaz, sorulur.
 2. `/orkestra:dagit` → `roadmap.md` (fazlar, görevler, ajan, sahip klasör, bağımlılık, mermaid)
 3. **Kapı 1:** orkestra roadmap'i fikir.md ile karşılaştırır (eksik görev, çakışan sahiplik).
    **Kapı 2:** kullanıcıya sunulur. "Revize" → 1. adıma dönülür.
 4. `/orkestra:faz-calistir A` → `B` → `C`, sırayla, **her çağrıda bir faz**. Önceki faz onaylanmadan sonraki başlamaz.
-   Faz A sonunda kullanıcı `design-preview.html` dosyasını açar ve tek seferde onay/revize der.
+   Faz A'da önce `design-yonler.html` ile 3 yön sunulur, kullanıcı birini (veya karışımı) seçer; sonra `design-preview.html` açılır ve tek seferde onay/revize denir.
 5. Faz C bitince sonuç kullanıcıya sunulur.
 6. `/orkestra:oturum-kapat` → progress.md, commit mesajı önerisi, `/compact` veya `/clear` önerisi.
 

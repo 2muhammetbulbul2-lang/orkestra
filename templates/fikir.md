@@ -6,9 +6,10 @@
 ## Amaç
 (Tek cümle: ne yapıyor, kimin için.)
 
-## Kullanıcı
+## Kullanıcı ve senaryo
 - Birincil kullanıcı:
 - Kullanım anı / bağlam:
+- Bugün nasıl çözüyor:
 - Cihaz: mobil / tablet / masaüstü
 
 ## Temel özellikler (ilk sürüm)
@@ -19,10 +20,23 @@
 ## Kapsam dışı
 -
 
+## Veri ve gizlilik
+- Ne saklanır, nerede (cihaz / sunucu):
+- Hesap / hassas veri:
+
 ## Kısıtlar
 - Teknoloji:
 - Süre / bütçe:
-- Hukuki / gizlilik:
+- Hukuki:
+
+## His ve görünüm
+- Benzesin / benzemesin:
+- Ton (sakin, canlı, ciddi...):
+
+## Kararlar
+| Konu | Seçenekler | Seçilen | Neden |
+|---|---|---|---|
+| | | | |
 
 ## Başarı ölçütü
 (Ölçülebilir: "X kullanıcı Y işini Z saniyede yapabiliyor".)

@@ -3,14 +3,14 @@
 > Kaynak: fikir.md · Durum: ONAYLI · Sürüm: 1
 
 ## Fazlar
-- **A — Tasarım sistemi:** design-system.md + design-preview.html (görsel onay)
+- **A — Tasarım sistemi:** 3 yön seçimi (design-yonler.html) → design-system.md + design-preview.html (görsel onay)
 - **B — Kod modülleri:** paralel, her modül kendi klasöründe
 - **C — Ekranlar:** design-system.md'ye uyan arayüz
 
 ## Görevler
 | ID | Faz | Görev | Ajan | Sahip klasör / dosya | Bağımlılık | Denetçiler |
 |---|---|---|---|---|---|---|
-| A1 | A | Tasarım sistemi (açık/koyu tema) + önizleme | tasarim-sistemi | `design-system.md`, `design-preview.html` | — | denetci-tasarim |
+| A1 | A | Tasarım sistemi (açık/koyu tema) + önizleme | tasarim-sistemi | `design-system.md`, `design-preview.html`, `design-yonler.html` | — | denetci-tasarim |
 | B1 | B | Görev modeli + CRUD | kod-modul | `src/todos/**` | A1 | denetci-kod, denetci-guvenlik, denetci-hafiza |
 | B2 | B | localStorage deposu | kod-modul | `src/storage/**` | A1 | denetci-kod, denetci-guvenlik, denetci-hafiza |
 | B3 | B | Filtreleme | kod-modul | `src/filters/**` | B1 | denetci-kod, denetci-hafiza |

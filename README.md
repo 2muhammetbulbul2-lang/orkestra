@@ -6,12 +6,16 @@ Claude Code için Türkçe çoklu ajan iş akışı eklentisi. Fikri sen verirsi
 
 ```mermaid
 flowchart TD
-  U([Sen]) --> F["/orkestra:fikir → fikir.md"]
+  U([Sen]) --> F["/orkestra:fikir: görüşme + seçenekler → fikir.md"]
+  F -. gerekirse .-> R["arastirmaci → arastirma.md"]
+  R -.-> F
   F --> D["/orkestra:dagit → roadmap.md"]
   D --> K1{"Kapı 1: Orkestra<br/>tutarlılık"}
   K1 --> K2{"Kapı 2: Sen<br/>onay / revize"}
   K2 -- revize --> D
-  K2 -- onay --> A["Faz A: tasarim-sistemi → design-system.md + design-preview.html"]
+  K2 -- onay --> Y["Faz A-1: tasarim-sistemi → design-yonler.html (3 yön)"]
+  Y --> YS{"Sen: 1, 2, 3 veya karışım"}
+  YS --> A["Faz A-2: tasarim-sistemi → design-system.md + design-preview.html"]
   A --> DA[denetci-tasarim]
   DA --> KA{"Sen: önizlemeyi aç<br/>onay / revize"}
   KA -- revize --> A
@@ -28,6 +32,7 @@ flowchart TD
 |---|---|---|---|
 | Orkestra | Ana oturum | oturum modeli | Sadece hafıza dosyaları |
 | İş dağıtıcı | Skill `/orkestra:dagit` | oturum modeli | roadmap.md |
+| arastirmaci | Alt ajan (web araması) | sonnet | Sadece arastirma.md |
 | tasarim-sistemi, kod-modul, ekran | Alt ajan | sonnet | Atanan klasör |
 | denetci-kod, denetci-tasarim, denetci-hafiza | Alt ajan | sonnet | Hayır |
 | denetci-guvenlik | Alt ajan | opus | Hayır |
@@ -63,7 +68,7 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
 | Komut | Ne yapar |
 |---|---|
 | `/orkestra:yeni-proje` | Şablonları projeye kopyalar: CLAUDE.md, fikir/roadmap/progress/design-system.md, `.claude/settings.json`. Var olan dosyanın üzerine yazmaz; settings.json'daki deny kurallarını birleştirir. |
-| `/orkestra:fikir` | Hayal, amaç, kullanıcı, kısıtlar ve başarı ölçütünü netleştirir. Sonucu `fikir.md`ye yazar. |
+| `/orkestra:fikir` | Seçenekli sorularla derinlemesine görüşür (kullanıcı, kapsam, veri, his). Gerekirse araştırmacıya benzer ürünleri ve ücretli/ücretsiz alternatifleri araştırtıp seçenek olarak sunar. Sonucu `fikir.md`ye yazar. |
 | `/orkestra:dagit` | `roadmap.md`yi üretir (fazlar, görevler, sahiplik, mermaid). Ardından Kapı 1 ve Kapı 2'yi uygular. |
 | `/orkestra:faz-calistir A\|B\|C` | Fazı yürütür: dağıtım, denetim ve ret limiti. |
 | `/orkestra:oturum-kapat` | progress.md'yi günceller, commit mesajı önerir, `/compact` veya `/clear` önerir. |
@@ -83,7 +88,8 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
   (roadmap'i incele → "onay")
 > /clear
 > /orkestra:faz-calistir A
-  (design-preview.html'i tarayıcıda aç → "onay")
+  (design-yonler.html'i aç → "2" veya "1'in renkleri, 3'ün fontu")
+  (design-preview.html'i aç → "onay")
 > /clear
 > /orkestra:faz-calistir B
 > /clear
