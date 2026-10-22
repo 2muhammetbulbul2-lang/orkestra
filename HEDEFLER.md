@@ -17,4 +17,4 @@ Kaynak: GSD, spec-kit, gstack, BMAD, wshobson/agents, ECC. Hangileri yapılacağ
 - **Headless koşu bulguları:** (1) `progress.md` bekleyen görevleri (v2 C4/C5) yazmazsa `faz-calistir` "hepsi bitti" der; faz bitiminde ve roadmap revizyonunda progress.md "Şu an"ı güncellemek skill'e yazılmalı. (2) Arka plan ajanı Edit izni olmadan başlarsa durur; yeni proje kurulumunda sahip klasörler için `permissions.allow` eklemek düşünülebilir (kullanıcı onayıyla).
 - ~~Küçük işler için hızlı yol~~: v0.4.0 `duzelt` skill'i (gerçek çalıştırmada denenecek).
 - Gereksinim → görev izlenebilirliği: bitti ölçütü v0.4.0'da eklendi; fikir.md başarı ölçütü → görev bağı Kapı 1'de kontrol ediliyor, ~~sabit gereksinim kimlikleri (R1, R2...)~~ v0.7.0'da eklendi (fikir.md numaralar, roadmap ölçütünde "(R1)", Kapı 1 eşleşmeyi kontrol eder). Gerçek koşuda denenecek.
-- Betikler için otomatik test (`node --test`).
+- ~~Betikler için otomatik test (`node --test`)~~: v0.7.1'de eklendi (25 test). Playwright ile gerçek ekran görüntüsü ve görüntüleyici açma sınanmadı.

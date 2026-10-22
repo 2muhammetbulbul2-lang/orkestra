@@ -1,5 +1,9 @@
 # Değişiklik günlüğü
 
+## [0.7.1] - 2026-10-23
+### Eklendi
+- `test/betikler.test.mjs`: `node --test` ile 25 test (yeni-proje, devral-uygula, post-edit, stop-hatirlat, okunan-tara, harita, devral-tara, goster, ekran-goruntusu). Bağımlılık yok.
+
 ## [0.7.0] - 2026-10-22
 ### Eklendi
 - Sabit gereksinim numaraları: fikir.md başarı ölçütleri R1, R2... diye numaralanır (numara sonradan değişmez). dagit her görevin bitti ölçütüne "(R1)" diye karşıladığı numarayı yazar; Kapı 1 hiçbir görevde geçmeyen veya fikir.md'de olmayan numarayı yakalar. Şablonlar ve örnekler güncellendi.

@@ -84,6 +84,7 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
 - **Görsel onay kapısı:** Faz A ve Faz C'de (ve görünüm düzeltmelerinde) `ekran` ajanı ekran görüntüsünü `kanit/` klasörüne alır, orkestra varsayılan görüntüleyicide açar, sen "onay" demeden sonraki aşamaya geçilmez. Projede Playwright kuruluysa çalışır; yoksa kurmaz, söyler ve eski yola (dosyayı tarayıcıda aç) döner.
 - **Depo haritası:** `scripts/harita.mjs` Faz B/C görevlerine kısa bir dosya haritası verir (salt okunur, ağ yok, gizli dosyaları listelemez).
 - **Graphify (isteğe bağlı):** Graphify'ı sen kurarsan (PyPI paketi `graphifyy`, iki "y"; kurulum `~/.claude/` altına yazar, o yüzden orkestra kurmaz) ve projede `graphify-out/GRAPH_REPORT.md` oluşursa `faz-calistir` ilgili özeti ajanlara bağlam olarak verir. Yoksa hiçbir şey değişmez.
+- **Betik testleri:** `node --test test/betikler.test.mjs` hook ve yardımcı betikleri geçici klasörlerde sınar (25 test; gerçek projeye ve ~/.claude'a dokunmaz, tarayıcı/görüntüleyici açmaz).
 - **permissions.deny** (`/orkestra:yeni-proje` ile projeye eklenir): `.env`, `.env.*`, `*.pem`, `*.key`, `secrets/`, `node_modules/`, `dist/`, `build/`, `.wrangler/` okunmaz.
 
 ## Örnek kullanım
