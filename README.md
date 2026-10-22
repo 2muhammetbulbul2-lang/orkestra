@@ -71,6 +71,7 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
 | `/orkestra:fikir` | Seçenekli sorularla derinlemesine görüşür (kullanıcı, kapsam, veri, his). Gerekirse araştırmacıya benzer ürünleri ve ücretli/ücretsiz alternatifleri araştırtıp seçenek olarak sunar. Sonucu `fikir.md`ye yazar. |
 | `/orkestra:dagit` | `roadmap.md`yi üretir (fazlar, görevler, sahiplik, mermaid). Ardından Kapı 1 ve Kapı 2'yi uygular. |
 | `/orkestra:faz-calistir A\|B\|C` | Fazı yürütür: dağıtım, denetim ve ret limiti. |
+| `/orkestra:duzelt <sorun>` | Tek bir sorunu düzeltir: dosya sahibi tek üretici, değişiklik türüne uyan tek denetçi. Kapsam birden fazla sahibe yayılıyorsa durur; aynı sorun 2 denemede düzelmezse tahmin yerine kanıt (ekran görüntüsü, hata çıktısı) ister. |
 | `/orkestra:oturum-kapat` | progress.md'yi günceller, commit mesajı önerir, `/compact` veya `/clear` önerir. |
 
 ## Otomatik katman

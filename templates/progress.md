@@ -16,6 +16,10 @@
 | Tarih | Karar | Neden |
 |---|---|---|
 
+## Düzeltmeler
+| Tarih | Sorun | Sahip | Denetçi | Sonuç | Deneme |
+|---|---|---|---|---|---|
+
 ## Ret sayaçları
 | Görev ID | Ret sayısı | Son gerekçe özeti | Durum |
 |---|---|---|---|

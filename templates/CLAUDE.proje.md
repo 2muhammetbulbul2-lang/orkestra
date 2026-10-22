@@ -60,6 +60,7 @@
 4. `/orkestra:faz-calistir A` → `B` → `C`, sırayla, **her çağrıda bir faz**. Önceki faz onaylanmadan sonraki başlamaz.
    Faz A'da önce `design-yonler.html` ile 3 yön sunulur, kullanıcı birini (veya karışımı) seçer; sonra `design-preview.html` açılır ve tek seferde onay/revize denir.
 5. Faz C bitince sonuç kullanıcıya sunulur.
+   Sonraki küçük sorun/hata için `/orkestra:duzelt <sorun>`: sorun dosya sahibi **tek** üreticiye, tek denetçiye gider; her görevin roadmap'teki **bitti ölçütü** kanıtlanır.
 6. `/orkestra:oturum-kapat` → progress.md, commit mesajı önerisi, `/compact` veya `/clear` önerisi.
 
 ### Token tasarrufu

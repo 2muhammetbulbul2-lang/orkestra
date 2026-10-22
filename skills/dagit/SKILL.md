@@ -26,7 +26,7 @@ Revize notu (varsa): $ARGUMENTS
 - **Testler her görevde `tests/<ad>/**` altındadır** (B ve C dahil) ve görevin sahip klasörüne yazılır; böylece kökteki tek `npm test` hepsini çalıştırır. Test dosyası `src/**` içine konmaz.
 - **Faz B:** fikir.md'deki her özellik için bağımsız modüller; ajan `kod-modul`; her modüle **ayrı** klasör (örn. `src/todos/**`).
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
-- Her görev: ID, faz, ajan, sahip klasör, bağımlılık, denetçiler
+- Her görev: ID, faz, **bitti ölçütü**, ajan, sahip klasör, bağımlılık, denetçiler. Bitti ölçütü tek cümle ve doğrulanabilir olmalı (komut çıktısı, test, ekranda görünen davranış). "Düzgün çalışır", "tamamlanır" yazma. Kod ölçütlerini test komutuna, ekran ölçütlerini görünür bir sonuca bağla; makinenin doğrulayamayacağı ölçütün sonuna "Doğrulama: kullanıcı ... dener" ekle. Ölçütü fikir.md'deki başarı ölçütlerinden türet.
   (A: denetci-tasarim · B: denetci-kod + denetci-guvenlik + denetci-hafiza · C: denetci-tasarim + denetci-guvenlik).
 - Paralel gruplar ve çakışma notu. Mermaid `flowchart` ile bağımlılık diyagramı.
 - Durum: `TASLAK`.
@@ -36,6 +36,7 @@ roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - fikir.md'deki her temel özellik en az bir göreve karşılık geliyor mu? (eksik görev)
 - Kapsam dışı bir şey görev olmuş mu?
 - Kök dosyaların (`package.json`, yapılandırma, `index.html` gibi) her birinin bir sahibi var mı? Test komutunu çalıştıracak bir görev var mı?
+- Her görevin bitti ölçütü var mı, tek cümle ve doğrulanabilir mi? fikir.md'deki her başarı ölçütü en az bir görevin ölçütüne yansıyor mu?
 - Hiçbir sahip klasörü yasaklı ad (`node_modules`, `dist`, `build`, `.wrangler`, `secrets`) içermiyor mu?
 - İki görevin sahip klasörü çakışıyor mu? Çakışıyorsa: sırala (bağımlılık ekle) veya `worktree` notu düş.
 - Döngüsel bağımlılık var mı?

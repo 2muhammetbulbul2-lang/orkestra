@@ -8,12 +8,14 @@
 - **C — Ekranlar:** design-system.md'ye uyan arayüz
 
 ## Görevler
-| ID | Faz | Görev | Ajan | Sahip klasör / dosya | Bağımlılık | Denetçiler |
-|---|---|---|---|---|---|---|
-| A1 | A | Tasarım sistemi + önizleme | tasarim-sistemi | `design-system.md`, `design-preview.html`, `design-yonler.html` | — | denetci-tasarim |
-| B0 | B | Proje iskeleti (package.json, test komutu, .gitignore) | kod-modul | `package.json`, `.gitignore` | A1 | denetci-kod |
-| B1 | B | (modül) | kod-modul | `src/(modul)/**` | B0 | denetci-kod, denetci-guvenlik, denetci-hafiza |
-| C1 | C | (ekran) | ekran | `src/screens/(ekran)/**` | A1, B1 | denetci-tasarim, denetci-guvenlik |
+| ID | Faz | Görev | Bitti ölçütü | Ajan | Sahip klasör / dosya | Bağımlılık | Denetçiler |
+|---|---|---|---|---|---|---|---|
+| A1 | A | Tasarım sistemi + önizleme | (ör. 3 temada tüm tokenlar tanımlı; önizleme her bileşeni gösterir) | tasarim-sistemi | `design-system.md`, `design-preview.html`, `design-yonler.html` | — | denetci-tasarim |
+| B0 | B | Proje iskeleti (package.json, test komutu, .gitignore) | (ör. `npm test` hatasız çalışır) | kod-modul | `package.json`, `.gitignore` | A1 | denetci-kod |
+| B1 | B | (modül) | (ör. `npm test` içinde şu 3 davranış test edilir ve geçer) | kod-modul | `src/(modul)/**` | B0 | denetci-kod, denetci-guvenlik, denetci-hafiza |
+| C1 | C | (ekran) | (ör. şu eylem yapılınca ekranda şu görünür) | ekran | `src/screens/(ekran)/**` | A1, B1 | denetci-tasarim, denetci-guvenlik |
+
+> **Bitti ölçütü** her görevde zorunlu, tek cümle ve doğrulanabilir: bir komutun çıktısı, bir davranış veya ekranda görünen bir şey. "Düzgün çalışır", "tamamlandı" ölçüt değildir. Üretici raporunda ölçüt için kanıt (komut veya gözlem → sonuç) verir, denetçi ölçütün karşılandığına bakar. Doğrulanamayan ölçüt yazılırsa "Doğrulama:" ile kim nasıl bakacak belirtilir (örn. "kullanıcı tarayıcıda açar").
 
 ## Paralel çalışma
 - Paralel grup B: (bağımsız B görevleri)

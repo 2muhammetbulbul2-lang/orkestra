@@ -31,6 +31,7 @@ Orkestra sana şunları verir: **ekran adı**, **sahip olduğun klasör**, kulla
 ```
 Değişen dosyalar: ...
 Test sonucu: ...
+Ölçüt kanıtı: (görevdeki "Bitti ölçütü" için komut veya gözlem → sonuç; makine doğrulayamıyorsa "doğrulanmadı, kullanıcı bakacak")
 Özet:
 - (en fazla 5 madde)
 Atlanan / risk: (doğrulamadığın veya kapsam dışı bıraktığın şey; yoksa "yok")

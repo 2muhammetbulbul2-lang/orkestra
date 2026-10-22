@@ -36,6 +36,7 @@ Bunlardan biri eksikse işe başlama, raporda eksik olanı belirt.
 ```
 Değişen dosyalar: ...
 Test sonucu: (komut + geçti/kaldı sayısı)
+Ölçüt kanıtı: (görevdeki "Bitti ölçütü" için komut veya gözlem → sonuç; doğrulayamadıysan "doğrulanmadı" yaz)
 Özet:
 - (en fazla 5 madde)
 Atlanan / risk: (kapsam dışı bıraktığın veya doğrulamadığın şey, bilinen sınır; yoksa "yok")

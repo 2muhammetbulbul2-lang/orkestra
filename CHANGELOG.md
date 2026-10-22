@@ -1,5 +1,12 @@
 # Değişiklik günlüğü
 
+## [0.4.0] - 2026-10-22
+### Eklendi
+- `/orkestra:duzelt`: tek sorun, tek üretici, tek denetçi. Orkestra sorunu roadmap sahipliğinden dosya sahibine bağlar, değişiklik türüne göre denetçiyi seçer (görünüm → denetci-tasarim, mantık → denetci-kod, girdi/veri/yetki → denetci-guvenlik). Kapsam birden çok sahibe yayılırsa veya yeni özellikse durur. Aynı sorun 2 denemede düzelmezse tahmin yerine kanıt ister. Sonucu `progress.md` "Düzeltmeler" tablosuna tek satır yazar; doğrulama notu zorunlu.
+- Roadmap görevlerine **Bitti ölçütü** sütunu (tek cümle, doğrulanabilir; imarmobil yol haritasından esinlendi). `dagit` yazar ve Kapı 1'de denetler; `faz-calistir` üreticiye ve denetçiye verir; üretici raporunda `Ölçüt kanıtı` satırı yazar; `denetci-kod` ölçütü kendisi arar. Ölçütsüz eski roadmap'te `faz-calistir` durur.
+### Değişti
+- `progress.md` şablonuna "Düzeltmeler" tablosu; proje `CLAUDE.md` şablonuna `duzelt` satırı.
+
 ## [0.3.5] - 2026-10-22
 ### Düzeltildi (Pacman deneme koşusundan)
 - `dagit`: görev sahip klasörü `build`, `dist`, `node_modules`, `.wrangler`, `secrets` olamaz; proje deny listesi bu klasörleri engellediği için üretici yazamayıp görev duruyordu. Kapı 1 bunu da kontrol eder.

@@ -13,6 +13,7 @@ argument-hint: "A | B | C"
   `node "${CLAUDE_PLUGIN_ROOT}/scripts/yeni-proje.mjs" "${CLAUDE_PROJECT_DIR}"`
 - `roadmap.md`, `progress.md`, `CLAUDE.md` oku. Faz harfi A/B/C değilse sor.
 - roadmap.md `ONAYLI` değilse dur, `/orkestra:dagit` öner.
+- Görev tablosunda **Bitti ölçütü** sütunu yoksa veya bir görevin ölçütü boşsa dur, `/orkestra:dagit` ile ölçüt eklenmesini iste (eski roadmap'lerde). Kullanıcı "ölçütsüz devam" derse devam et ve progress.md'ye not düş.
 - Önceki faz onaylanmamışsa (B için A, C için B) dur ve söyle.
 - **Bir çağrıda sadece bir faz** yürütülür.
 
@@ -28,11 +29,12 @@ Görev metni her zaman şunları içerir:
 ```
 Görev ID / modül veya ekran adı:
 Sahip olduğun klasör: (sadece buraya yaz)
+Bitti ölçütü: (roadmap.md'deki görev satırından, aynen)
 Yapılacaklar: (roadmap.md'den). Testleri `tests/<ad>/**` altına yaz (`src/**` içine değil); kökteki `npm test` hepsini çalıştırmalı.
 Depo haritası: (varsa, yukarıdaki çıktı)
 Graphify özeti: (varsa, en fazla 15 satır)
 Önceki RET gerekçesi: (varsa)
-Çıktı sınırı: Sadece "Değişen dosyalar / Test sonucu / Özet (en fazla 5 madde) / Atlanan-risk (tek satır)" döndür.
+Çıktı sınırı: Sadece "Değişen dosyalar / Test sonucu / Ölçüt kanıtı (komut veya gözlem → sonuç) / Özet (en fazla 5 madde) / Atlanan-risk (tek satır)" döndür.
 ```
 
 **Paralellik (Faz B, C):** aynı paralel gruptaki bağımsız görevleri tek mesajda birden çok ajan çağrısıyla başlat.
@@ -45,7 +47,7 @@ Her üretici raporundan sonra fazın denetçilerini (paralel) çağır:
 - B: `orkestra:denetci-kod`, `orkestra:denetci-guvenlik`, `orkestra:denetci-hafiza`
 - C: `orkestra:denetci-tasarim`, `orkestra:denetci-guvenlik`
 
-Denetçiye: görev ID, sahip klasör, değişen dosyalar ve "Sadece KARAR: ONAY | RET + madde madde gerekçe döndür" yaz.
+Denetçiye: görev ID, sahip klasör, değişen dosyalar, görevin **bitti ölçütü** (denetçi ölçütün karşılandığına kendisi bakar, üreticinin beyanına yetinmez) ve "Sadece KARAR: ONAY | RET + madde madde gerekçe döndür" yaz.
 Düzeltme sonrası: değişiklik **yalnız test veya dokümantasyon** ise sadece RET veren denetçiyi yeniden çağır. Düzeltme **üretim kodunu** değiştirdiyse o görevin tüm denetçilerini yeniden çağır (onay verenler düzeltilmiş sürümü görmemiş olur).
 Tek istisna (Faz C): düzeltme **yalnız stil dosyalarını** (CSS/token kullanımı) değiştirdiyse ve girdi, veri, yetki veya betik mantığına hiç dokunmadıysa sadece `denetci-tasarim` yeniden çağrılır; şüphede tüm denetçileri çağır.
 Faz B başlamadan önce testlerin çalışacağından emin ol: kök dosyaların (package.json vb.) sahibi roadmap'te yoksa dur ve kullanıcıya sor.
