@@ -31,6 +31,14 @@ Revize notu (varsa): $ARGUMENTS
 - Paralel gruplar ve çakışma notu. Mermaid `flowchart` ile bağımlılık diyagramı.
 - Durum: `TASLAK`.
 
+## 2b. CLAUDE.md bölümlerini doldur
+Proje `CLAUDE.md` şablondan geldiyse 1–4. bölümlerde boş `(...)` yer tutucuları kalır; üretici ajanlar bunları okuyup işe başlar. Orkestra'dan Faz A'dan önce doldur (Orkestra kuralları bölümüne dokunma):
+- **1. Proje ve teknoloji:** amaç fikir.md'nin tek cümlelik amacı; dil/çatı ve veri/servisler fikir.md ile `arastirma.md` kararlarından. Orada yazmıyorsa **uydurma**; kullanıcıya sor veya `Belirsiz: ...` yaz.
+- **3. Komutlar:** yalnız kesinleşenleri yaz (B0 iskeleti kurulduktan sonra `package.json` gerçekten tanımlıyorsa). Henüz olmayan komutu yazma, `(B0 sonrası)` bırak. Deploy komutu fikir.md'de yoksa boş bırak ve kullanıcıya sor.
+- **4. Klasör haritası:** roadmap.md'deki her görevin sahip klasörünü ve görev ID'sini tabloya al (örn. `src/todos/` | todo modülü | B2).
+- **2. Kodlama kuralları:** şablon satırlarını koru; yalnız fikir.md kısıtlarından (örn. "mobil öncelikli", "çevrimdışı çalışmalı") doğrudan çıkan kuralları ekle.
+- Kullanıcı CLAUDE.md'yi kendisi doldurmuşsa (yer tutucu yok) dokunma. Sonucu Kapı 2'de tek satırla bildir: "CLAUDE.md bölüm 1,3,4 dolduruldu; sorulacak: ...".
+
 ## 3. Kapı 1 — orkestra kontrolü
 roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - fikir.md'deki her temel özellik en az bir göreve karşılık geliyor mu? (eksik görev)
@@ -40,6 +48,7 @@ roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - Hiçbir sahip klasörü yasaklı ad (`node_modules`, `dist`, `build`, `.wrangler`, `secrets`) içermiyor mu?
 - İki görevin sahip klasörü çakışıyor mu? Çakışıyorsa: sırala (bağımlılık ekle) veya `worktree` notu düş.
 - Döngüsel bağımlılık var mı?
+- CLAUDE.md 1–4. bölümlerinde yer tutucu `(...)` kaldı mı? Kalan her biri ya kullanıcıya sorulacak ya da `(B0 sonrası)` olarak işaretli olmalı; uydurma değer yok.
 Sorun varsa roadmap.md'yi düzelt ve Kapı 1'i tekrarla. Sonucu "Kapı kayıtları"na yaz.
 
 ## 4. Kapı 2 — kullanıcı onayı

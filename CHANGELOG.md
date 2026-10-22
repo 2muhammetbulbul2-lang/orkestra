@@ -1,5 +1,9 @@
 # Değişiklik günlüğü
 
+## [0.9.0] - 2026-10-23
+### Değişti
+- `dagit`: yeni 2b adımı, roadmap'ten sonra `CLAUDE.md` 1–4. bölümlerini (amaç, teknoloji, komutlar, klasör haritası) fikir.md/arastirma.md/roadmap.md'den doldurur; bilinmeyeni uydurmaz, sorar. Kapı 1 kalan yer tutucuyu kontrol eder.
+
 ## [0.8.0] - 2026-10-23
 ### Eklendi
 - `scripts/git-kapi.mjs` (PreToolUse, Bash): `git commit` öncesi staged gizli dosya (.env, *.pem, *.key, secrets/) varsa engeller; projede lint/test script'i kırmızıysa commit'i engeller (exit 2); `git push` engellenmez, "kullanıcı onayı olmadan çalıştırma" hatırlatması eklenir. `ORKESTRA_HOOKS=off` kapatır, `minimal` yalnız lint koşar. 4 yeni test (toplam 29).

@@ -18,4 +18,5 @@ Kaynak: GSD, spec-kit, gstack, BMAD, wshobson/agents, ECC. Hangileri yapılacağ
 - ~~Küçük işler için hızlı yol~~: v0.4.0 `duzelt` skill'i (gerçek çalıştırmada denenecek).
 - Gereksinim → görev izlenebilirliği: bitti ölçütü v0.4.0'da eklendi; fikir.md başarı ölçütü → görev bağı Kapı 1'de kontrol ediliyor, ~~sabit gereksinim kimlikleri (R1, R2...)~~ v0.7.0'da eklendi (fikir.md numaralar, roadmap ölçütünde "(R1)", Kapı 1 eşleşmeyi kontrol eder). Gerçek koşuda denenecek.
 - ~~Hook ile zorlanan kurallar~~ (CI kırmızıyken commit yok, gizli dosya commit engeli, push öncesi uyarı): v0.8.0'da `git-kapi.mjs` ile eklendi. Gerçek Claude oturumunda hook'un tetiklenmesi sınanmadı.
+- ~~`dagit` CLAUDE.md bölümlerini doldurmuyor~~: v0.9.0'da 2b adımı eklendi (gerçek koşuda denenecek).
 - ~~Betikler için otomatik test (`node --test`)~~: v0.7.1'de eklendi (25 test). Playwright ile gerçek ekran görüntüsü ve görüntüleyici açma sınanmadı.
