@@ -1,5 +1,10 @@
 # Değişiklik günlüğü
 
+## [0.5.1] - 2026-10-22
+### Değişti
+- `progress.md` şablonu devir notu biçiminde: Başlarken, Son oturumda ne oldu, Sırada, Açık kararlar, Test komutları (imarmobil DEVIR-NOTU'ndan esinlendi). `oturum-kapat` bu bölümleri günceller.
+- `oturum-kapat`: şişmiş hafıza dosyası veya büyük `MEMORY.md` indeksi için yalnız uyarı ve arşivleme önerisi (dosyaya dokunmaz).
+
 ## [0.5.0] - 2026-10-22
 ### Eklendi
 - `/orkestra:devral`: çalışan bir projeyi orkestra düzenine bağlar. `scripts/devral-tara.mjs` (salt okunur) mevcut CLAUDE.md, yol haritası, devir notu, hafıza boyutları, test/CI, 1000+ satırlık dosyalar ve üst düzey klasörleri raporlar; şişmiş hafıza yalnız uyarılır. Onaydan sonra `scripts/devral-uygula.mjs` yalnız eksik olanı ekler: `ORKESTRA.md` (kurallar ayrı dosyada, projenin `CLAUDE.md`'sine ancak ayrıca onayla tek satır `@ORKESTRA.md` eklenir) ve eksik deny kuralları. Hiçbir mevcut dosyanın üzerine yazılmaz.

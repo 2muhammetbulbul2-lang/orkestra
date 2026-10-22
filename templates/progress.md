@@ -2,9 +2,23 @@
 
 > Her oturum önce bu dosyayı ve roadmap.md'yi okur. /orkestra:oturum-kapat günceller.
 
-## Şu an
+## Başlarken
+- Önce bu dosyayı ve roadmap.md'yi oku; sonra "Sırada" başlığındaki ilk işten devam et.
 - Aktif faz: —
 - Son oturum: —
+
+## Son oturumda ne oldu
+-
+
+## Sırada
+1.
+
+## Açık kararlar
+- (kullanıcıdan cevap bekleyen sorular; yoksa "yok")
+
+## Test ve çalıştırma komutları
+- Test: `npm test`
+- Çalıştırma: `npm run dev`
 
 ## Yapılanlar
 -

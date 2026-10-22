@@ -9,16 +9,21 @@ description: Oturumu kapatırken progress.md'yi (yapılan, kalan, kararlar) gün
 
 1. `roadmap.md`, `progress.md` oku; `git status --short` ve `git diff --stat` ile bu oturumdaki değişikliklere bak.
 2. `progress.md` güncelle:
-   - **Şu an:** aktif faz, bugünün tarihi.
+   - **Başlarken / Şu an:** aktif faz, bugünün tarihi.
+   - **Son oturumda ne oldu:** en fazla 5 madde.
+   - **Sırada:** yeni oturumun ilk işi en üstte, numaralı.
+   - **Açık kararlar:** kullanıcıdan cevap bekleyenler.
+   - **Test ve çalıştırma komutları:** değiştiyse güncelle.
    - **Yapılanlar:** bu oturumda tamamlanan görev ID'leri (kısa).
    - **Kalanlar:** sıradaki görevler, durdurulmuş (2× RET) işler.
    - **Alınan kararlar:** tarih + karar + neden.
    - **Ret sayaçları:** güncel.
-3. İstersen tutarlılık için `orkestra:denetci-hafiza` çağır; RET ise progress.md'yi düzelt.
-4. Commit mesajı öner (commit atma, kullanıcı onaylarsa at):
+3. **Hafıza boyutu:** proje içinde hafıza klasörü varsa (örn. `docs/claude-memory`, `memory`) `node "${CLAUDE_PLUGIN_ROOT}/scripts/devral-tara.mjs" "${CLAUDE_PROJECT_DIR}"` çıktısındaki "Hafıza" bölümüne bak. ŞİŞMİŞ veya İNDEKS BÜYÜK uyarısı varsa kullanıcıya tek satırla bildir ve arşivleme öner; dosyalara dokunma. Hafıza klasörü yoksa atla. `progress.md` 300 satırı geçtiyse eski "Yapılanlar" maddelerini özetlemeyi öner.
+4. İstersen tutarlılık için `orkestra:denetci-hafiza` çağır; RET ise progress.md'yi düzelt.
+5. Commit mesajı öner (commit atma, kullanıcı onaylarsa at):
    ```
    <faz>: <kısa özet>
 
    - madde
    ```
-5. Öner: bağlam büyüdüyse `/compact`, iş bölümü bittiyse `/clear`. Yeni oturumda ilk iş: roadmap.md + progress.md okumak.
+6. Öner: bağlam büyüdüyse `/compact`, iş bölümü bittiyse `/clear`. Yeni oturumda ilk iş: roadmap.md + progress.md okumak.
