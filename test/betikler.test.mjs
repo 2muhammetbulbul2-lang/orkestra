@@ -357,3 +357,61 @@ test('ekran-goruntusu: Playwright kurulu değilse nedenini söyleyip 2 koduyla �
     assert.ok(!existsSync(join(kok, 'node_modules')));
   } finally { temizle(kok); }
 });
+
+// ---------- git-kapi.mjs ----------
+
+function gitKapi(kok, komut, env = {}) {
+  return calistir('git-kapi.mjs', [], {
+    girdi: JSON.stringify({ tool_input: { command: komut }, cwd: kok }),
+    env: { CLAUDE_PROJECT_DIR: kok, ...env },
+  });
+}
+function gitRepo(kok) {
+  spawnSync('git', ['init', '-q'], { cwd: kok });
+}
+
+test('git-kapi: lint kırmızıyken git commit engellenir (exit 2), yeşilken geçer', () => {
+  const kok = gecici();
+  try {
+    gitRepo(kok);
+    yaz(kok, 'package.json', JSON.stringify({ scripts: { lint: 'node -e "console.error(\'KIRMIZI\');process.exit(1)"' } }));
+    const r = gitKapi(kok, 'git commit -m x');
+    assert.equal(r.status, 2);
+    assert.match(r.stderr, /KIRMIZI/);
+    yaz(kok, 'package.json', JSON.stringify({ scripts: { lint: 'node -e "0"', test: 'node -e "0"' } }));
+    assert.equal(gitKapi(kok, 'git commit -m x').status, 0);
+  } finally { temizle(kok); }
+});
+
+test('git-kapi: staged .env/.key/secrets commit\'i engeller; aynı komuttaki git add de yakalanır', () => {
+  const kok = gecici();
+  try {
+    gitRepo(kok);
+    yaz(kok, '.env', 'A=1');
+    yaz(kok, 'src/a.js', '1');
+    spawnSync('git', ['add', '.env', 'src/a.js'], { cwd: kok });
+    const r = gitKapi(kok, 'git commit -m x');
+    assert.equal(r.status, 2);
+    assert.match(r.stderr, /\.env/);
+    assert.equal(gitKapi(gecici(), 'git add server.key && git commit -m x').status, 2);
+    assert.equal(gitKapi(kok, 'git add secrets/a.txt && git commit -m x').status, 2);
+  } finally { temizle(kok); }
+});
+
+test('git-kapi: git push engellemez, onay hatırlatması ekler; ilgisiz komut ve off sessiz', () => {
+  const kok = gecici();
+  try {
+    gitRepo(kok);
+    const r = gitKapi(kok, 'git push origin main');
+    assert.equal(r.status, 0);
+    assert.match(r.stdout, /onay/);
+    assert.equal(gitKapi(kok, 'ls -la').stdout, '');
+    yaz(kok, 'package.json', JSON.stringify({ scripts: { lint: 'node -e "process.exit(1)"' } }));
+    assert.equal(gitKapi(kok, 'git commit -m x', { ORKESTRA_HOOKS: 'off' }).status, 0);
+    assert.equal(gitKapi(kok, 'git commit -m x', { ORKESTRA_HOOKS: 'minimal' }).status, 2);
+  } finally { temizle(kok); }
+});
+
+test('git-kapi: bozuk stdin hook\'u kırmaz (exit 0)', () => {
+  assert.equal(calistir('git-kapi.mjs', [], { girdi: '{bozuk' }).status, 0);
+});

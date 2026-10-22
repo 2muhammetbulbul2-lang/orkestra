@@ -1,5 +1,9 @@
 # Değişiklik günlüğü
 
+## [0.8.0] - 2026-10-23
+### Eklendi
+- `scripts/git-kapi.mjs` (PreToolUse, Bash): `git commit` öncesi staged gizli dosya (.env, *.pem, *.key, secrets/) varsa engeller; projede lint/test script'i kırmızıysa commit'i engeller (exit 2); `git push` engellenmez, "kullanıcı onayı olmadan çalıştırma" hatırlatması eklenir. `ORKESTRA_HOOKS=off` kapatır, `minimal` yalnız lint koşar. 4 yeni test (toplam 29).
+
 ## [0.7.1] - 2026-10-23
 ### Eklendi
 - `test/betikler.test.mjs`: `node --test` ile 25 test (yeni-proje, devral-uygula, post-edit, stop-hatirlat, okunan-tara, harita, devral-tara, goster, ekran-goruntusu). Bağımlılık yok.
