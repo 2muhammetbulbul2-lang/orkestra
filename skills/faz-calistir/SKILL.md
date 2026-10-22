@@ -12,6 +12,7 @@ argument-hint: "A | B | C"
 - Proje kökünde `CLAUDE.md` yoksa önce kurulumu çalıştır ve sonucu bir satırla bildir:
   `node "${CLAUDE_PLUGIN_ROOT}/scripts/yeni-proje.mjs" "${CLAUDE_PROJECT_DIR}"`
 - `roadmap.md`, `progress.md`, `CLAUDE.md` oku. Faz harfi A/B/C değilse sor.
+- `kararlar.md` varsa oku (alınmış kararlar tekrar tartışılmaz).
 - roadmap.md `ONAYLI` değilse dur, `/orkestra:dagit` öner.
 - Görev tablosunda **Bitti ölçütü** sütunu yoksa veya bir görevin ölçütü boşsa dur, `/orkestra:dagit` ile ölçüt eklenmesini iste (eski roadmap'lerde). Kullanıcı "ölçütsüz devam" derse devam et ve progress.md'ye not düş.
 - Önceki faz onaylanmamışsa (B için A, C için B) dur ve söyle.
@@ -59,6 +60,7 @@ Faz B başlamadan önce testlerin çalışacağından emin ol: kök dosyaların 
 - **2. RET** → **üçüncü düzeltme turu YOK.** Görevi durdur, kullanıcıya gerekçeleri madde madde sun,
   seçenek sor: "elle karar / gerekçeyi kabul etmeden geç / görevi kapsamdan çıkar". Cevap gelene kadar o göreve dokunma.
   Diğer bağımsız görevler sürebilir.
+- **Vazgeçme kontrolü:** görevin `tasarim/<ID>.md` dosyası varsa 2. RET'te "Vazgeçme ölçütü"nü RET gerekçeleriyle karşılaştır. Ölçüt tutuyorsa seçeneklerin başına şunu koy: "Tasarımdaki vazgeçme ölçütü gerçekleşti (<ölçüt>); seçenek 2'ye (<tasarımdaki ikinci seçenek>) geçelim mi?" Ölçüt tutmuyorsa söyle ve olağan seçenekleri sun. Kararı kullanıcı verir; kendiliğinden yol değiştirme. Karar `kararlar.md`ye yazılır.
 - Sayaçları bellekte tut; progress.md'ye faz sonunda (veya durduğunda) yaz.
 
 ## 4. Faz A'ya özel: önce yön seçimi, sonra tam tasarım
@@ -98,6 +100,9 @@ Ne zaman: Faz A yön ve önizleme, Faz C her ekran grubu. Aynı kapı `/orkestra
 - `kanit/` klasörü kanıt içindir, commit edilmez (commit önerirken dışarıda bırak, `.gitignore` önerebilirsin).
 - Testleri ajanlar ve denetci-kod çalıştırır. Orkestra tarayıcı açmaz, tıklama yapmaz.
 - Faz C sonunda kullanıcıya ayrıca "tarayıcıda şunları dene" diye kısa bir kontrol listesi ve çalıştırma komutunu ver (etkileşim ve gerçek veri kanıtla anlaşılamaz). `denetci-tasarim`'in `Belirsiz:` satırları bu listeye eklenir.
+
+## 5b. Karar günlüğü (`kararlar.md`)
+Kullanıcı bir seçim yaptığında (yön seçimi, tasarım onayı veya revizesi, 2. RET kararı, vazgeçme, kapsamdan çıkarma) proje kökündeki `kararlar.md`ye **tek satır** ekle; dosya yoksa `# Kararlar` başlığı ve `| Tarih | Konu | Karar | Neden |` tablosuyla oluştur. Neden kullanıcının sözüyle yazılır, uydurulmaz; bilinmiyorsa "belirtilmedi". Yalnız ekleme yapılır, eski satır silinmez; karar değişirse yeni satır "önceki kararı değiştirir" notuyla eklenir. Görsel onay satırları `progress.md`de kalır, burada tekrarlanmaz.
 
 ## 6. Faz sonu: yaz ve DUR
 1. `progress.md`'yi **bir kez** güncelle. Yeni bir oturum hiçbir şey hatırlamadan devam edebilmeli:

@@ -35,6 +35,10 @@
 - Karakter (ekranda akılda kalacak tek şey: renk, şekil, yazı, hareket; "sade" tek başına yetmez):
 - Geri bildirim (eylem → tepki; örn. "noktayı yemek → nokta kaybolur, skor artar, kısa ses"; hata/başarı ve tepki hızı dahil):
 
+## Riskler (pre-mortem)
+(Bu ürün 6 ay sonra başarısız olduysa neden? En az 3 neden; her biri için önlem veya erken uyarı işareti.)
+1.
+
 ## Kararlar
 | Konu | Seçenekler | Seçilen | Neden |
 |---|---|---|---|

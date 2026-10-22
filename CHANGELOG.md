@@ -1,5 +1,11 @@
 # Değişiklik günlüğü
 
+## [0.13.0] - 2026-10-23
+### Eklendi
+- `fikir`: proje düzeyinde ön-ölüm analizi (pre-mortem) sorusu; şablona "Riskler (pre-mortem)" bölümü. `dagit` bu risklere dokunan B görevlerini "Tasarım gerektiren görevler"e alır.
+- Karar günlüğü `kararlar.md` (yön seçimi, tasarım onayı, 2. RET kararı, vazgeçme; yalnız ekleme, neden kullanıcının sözüyle). `faz-calistir` başta okur, `dagit` Kapı 2'de ilk satırı yazar.
+- `faz-calistir` 2. RET: görevin `tasarim/<ID>.md` dosyası varsa vazgeçme ölçütü kontrol edilir; tutuyorsa "seçenek 2'ye geçelim mi?" önerilir, karar kullanıcıdadır.
+
 ## [0.12.0] - 2026-10-23
 Başka bir sohbetteki "Faz 0 - Araştırma ve Tasarım" yaklaşımından: riskli modüller kod yazılmadan önce kısa bir tasarım dosyasından ve kullanıcı onayından geçer.
 ### Eklendi

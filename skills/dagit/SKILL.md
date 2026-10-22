@@ -28,7 +28,7 @@ Revize notu (varsa): $ARGUMENTS
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
 - Her görev: ID, faz, **bitti ölçütü**, ajan, sahip klasör, bağımlılık, denetçiler. Bitti ölçütü tek cümle ve doğrulanabilir olmalı (komut çıktısı, test, ekranda görünen davranış). "Düzgün çalışır", "tamamlanır" yazma. Kod ölçütlerini test komutuna, ekran ölçütlerini görünür bir sonuca bağla; makinenin doğrulayamayacağı ölçütün sonuna "Doğrulama: kullanıcı ... dener" ekle. Ölçütü fikir.md'deki başarı ölçütlerinden türet ve başına karşıladığı gereksinim numarasını yaz: "(R1) ...", birden fazlaysa "(R1,R3)", ilgisiz görev (iskelet) için "(R-)". fikir.md'de numara yoksa (eski dosya) önce başarı ölçütlerine R1, R2... numarası ver, anlamını değiştirme.
   (A: denetci-tasarim · B: denetci-kod + denetci-guvenlik + denetci-hafiza · C: denetci-tasarim + denetci-guvenlik).
-- **Tasarım gerektiren görevler:** Faz B görevlerinden riskli olanları roadmap'teki "Tasarım gerektiren görevler" bölümüne yaz (neden ile): dış servis veya ücret, kullanıcı verisi, güvenlik/yetki, geri alınamaz işlem, 3+ görevin bağlı olduğu çekirdek, belirsiz teknik seçim. Küçük ve bilinen işler (basit ekran verisi, yardımcı fonksiyon) listeye girmez; liste boşsa "yok" yaz. Bu görevler Faz B'de kod yazılmadan önce `tasarim/<ID>.md` ile kullanıcı onayından geçer.
+- **Tasarım gerektiren görevler:** Faz B görevlerinden riskli olanları roadmap'teki "Tasarım gerektiren görevler" bölümüne yaz (neden ile): dış servis veya ücret, kullanıcı verisi, güvenlik/yetki, geri alınamaz işlem, 3+ görevin bağlı olduğu çekirdek, belirsiz teknik seçim. fikir.md "Riskler (pre-mortem)" altındaki bir risk bir B görevine dokunuyorsa o görev de listeye girer. Küçük ve bilinen işler (basit ekran verisi, yardımcı fonksiyon) listeye girmez; liste boşsa "yok" yaz. Bu görevler Faz B'de kod yazılmadan önce `tasarim/<ID>.md` ile kullanıcı onayından geçer.
 - Paralel gruplar ve çakışma notu. Mermaid `flowchart` ile bağımlılık diyagramı.
 - Durum: `TASLAK`.
 
@@ -55,7 +55,7 @@ Sorun varsa roadmap.md'yi düzelt ve Kapı 1'i tekrarla. Sonucu "Kapı kayıtlar
 
 ## 4. Kapı 2 — kullanıcı onayı
 Kullanıcıya göster: görev tablosu + mermaid + Kapı 1 sonucu. Sor: **"Onay mı, revize mi?"**
-- **Onay:** durumu `ONAYLI` yap, Kapı 2'ye tarih yaz, progress.md'de "Aktif faz: A" yap. Şunu söyle ve dur:
+- **Onay:** durumu `ONAYLI` yap, Kapı 2'ye tarih yaz, `kararlar.md`ye bir satır ekle (bkz. faz-calistir "Karar günlüğü"), progress.md'de "Aktif faz: A" yap. Şunu söyle ve dur:
   "Şimdi `/clear` yaz, sonra `/orkestra:faz-calistir A`." Fazı kendiliğinden başlatma.
 - **Revize:** notu al, **2. adıma dön**. Kullanıcı fikri değiştirmek isterse `/orkestra:fikir` öner.
 
