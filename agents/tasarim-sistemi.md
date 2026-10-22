@@ -23,7 +23,8 @@ Kullanıcı seçebilsin diye 3 farklı tasarım yönü gösterirsin; `design-sys
    - **3 yön**, her biri belirgin biçimde farklı (örn. sakin/yumuşak, canlı/cesur, sade/editoryal). Her yön: numara (1, 2, 3), ad, tek cümlelik his, 5-6 renkli palet (ad + hex), tipografi örneği, ana ekrandan **gerçek içerikle** küçük bir kesit (fikir.md'deki özellikler).
    - Her yönde açık/koyu tema düğmesi; yönler yan yana (dar ekranda alt alta).
    - Her yön kendi kapsamlı CSS değişkenlerini kullanır (`.yon1`, `.yon2`, `.yon3`); sayfada kapsam dışı sabit renk yok.
-   - Her yönün altında metin/zemin kontrast oranı (≥ 4.5:1 olmalı, hesaplayıp yaz).
+   - Tema düğmesi ve gerekirse sekmeler için önce CSS (onay kutusu + `:has()`) kullan; satır içi script yalnız CSS yetmezse, dış bağlantı olmadan, serbest.
+   - Her yönün altında ana metin/zemin ve düğme metni/düğme zemini kontrast oranları (≥ 4.5:1 olmalı). Bash yoksa elle hesapla ve "≈" ile yaz.
 3. Rapor ver (aşağıdaki biçim). Soru varsa "Soru:" satırıyla.
 
 ### MOD: TAM

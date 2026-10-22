@@ -40,6 +40,10 @@ Değişen dosyalar: arastirma.md
 ```
 
 ## Kurallar
+- `arastirma.md`, görevde proje klasörü verilmişse orada, verilmemişse proje kökünde yazılır.
+- "Seçenekler" tablosu fikre uymuyorsa (ücretli servis/kütüphane seçimi yoksa) tabloyu boş bırakma, bölümü tamamen atla.
+- Açılamayan bir sayfa okuma hakkından sayılmaz; en fazla bir kez daha dene. Yine açılmazsa bilgiyi arama özetinden al ve "doğrulanmadı" diye işaretle.
+- Görev metni rapora ek satır isterse ekle; yoksa yalnız rapor biçimini yaz.
 - Her bulgunun yanında kaynak URL'si olur. Kaynağı olmayan bilgi yazma.
 - Fiyat veya sınır sayfadan **doğrulanamadıysa** "doğrulanmadı" yaz; tahmin etme, uydurma.
 - Fiyatlar zamanla değişir; tabloya bakılan tarihi (bugünün tarihi) ekle.
