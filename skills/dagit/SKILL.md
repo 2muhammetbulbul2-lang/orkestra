@@ -22,6 +22,7 @@ Revize notu (varsa): $ARGUMENTS
 `${CLAUDE_PLUGIN_ROOT}/templates/roadmap.md` biçimini kullan:
 - **Faz A:** tek görev, ajan `tasarim-sistemi`, sahip `design-system.md` + `design-preview.html` + `design-yonler.html` (önce 3 yön seçimi, sonra tam tasarım).
 - **Kök / ortak dosyalar için sahip ata:** `package.json` (`"type"`, `test` script'i), `.gitignore`, ortak yapılandırma gibi hiçbir modüle ait olmayan dosyaların **sahibi roadmap'te yazılı olmalı**. Teknolojide gerekiyorsa Faz B'nin ilk görevi `B0 Proje iskeleti` olsun (ajan `kod-modul`, sahip bu dosyalar; test komutu çalışır halde bırakır); diğer B görevleri B0'a bağlıdır. Dosyası olmayan sahipsiz kalmasın.
+- **Yasaklı klasör adları:** proje `permissions.deny` listesi `node_modules`, `dist`, `build`, `.wrangler`, `secrets` klasörlerini okumayı engeller. Hiçbir görevin sahip klasörü bu adlardan biri veya altı olmasın (örn. build betiği için `tools/`, `scripts/` kullan). Yoksa üretici yazamaz ve görev durur.
 - **Testler her görevde `tests/<ad>/**` altındadır** (B ve C dahil) ve görevin sahip klasörüne yazılır; böylece kökteki tek `npm test` hepsini çalıştırır. Test dosyası `src/**` içine konmaz.
 - **Faz B:** fikir.md'deki her özellik için bağımsız modüller; ajan `kod-modul`; her modüle **ayrı** klasör (örn. `src/todos/**`).
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
@@ -35,6 +36,7 @@ roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - fikir.md'deki her temel özellik en az bir göreve karşılık geliyor mu? (eksik görev)
 - Kapsam dışı bir şey görev olmuş mu?
 - Kök dosyaların (`package.json`, yapılandırma, `index.html` gibi) her birinin bir sahibi var mı? Test komutunu çalıştıracak bir görev var mı?
+- Hiçbir sahip klasörü yasaklı ad (`node_modules`, `dist`, `build`, `.wrangler`, `secrets`) içermiyor mu?
 - İki görevin sahip klasörü çakışıyor mu? Çakışıyorsa: sırala (bağımlılık ekle) veya `worktree` notu düş.
 - Döngüsel bağımlılık var mı?
 Sorun varsa roadmap.md'yi düzelt ve Kapı 1'i tekrarla. Sonucu "Kapı kayıtları"na yaz.

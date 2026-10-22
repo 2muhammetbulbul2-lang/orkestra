@@ -12,6 +12,7 @@ Sıra: önce gerçek çalıştırma, sonra buradaki maddeler. Hiçbiri kullanıc
 Kaynak: GSD, spec-kit, gstack, BMAD, wshobson/agents, ECC. Hangileri yapılacağı kullanıcı kararıdır.
 - ~~Hedef-geriye doğrulama~~, ~~paket kurulumu kuralı~~, ~~injection taraması~~: v0.3.4'te eklendi (gerçek çalıştırmada etkisi denenecek).
 - Faz C için "hedef-geriye" eşdeğeri: ekran gerçekten bağlı ve çalışıyor mu (şimdilik yalnız denetci-kod/hafiza bakıyor).
+- **Görsel teyit (kullanıcı isteği, Pacman denemesi):** tasarım ve ekran ajanları sayfayı görmeden onay veriyor; sonuç görsel kanıtla (ekran görüntüsü) teyit edilip sunulmalı. Çakışma: orkestra şu an tarayıcı/görsel test yapmıyor. Çözüm tasarlanacak (görsel doğrulama adımı, hangi araç, hangi ajan).
 - Küçük işler için hızlı yol (tam akışa girmeden).
 - Gereksinim → görev izlenebilirliği (sabit kimlikler).
 - Betikler için otomatik test (`node --test`).

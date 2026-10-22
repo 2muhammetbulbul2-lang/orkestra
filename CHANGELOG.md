@@ -1,5 +1,9 @@
 # Değişiklik günlüğü
 
+## [0.3.5] - 2026-10-22
+### Düzeltildi (Pacman deneme koşusundan)
+- `dagit`: görev sahip klasörü `build`, `dist`, `node_modules`, `.wrangler`, `secrets` olamaz; proje deny listesi bu klasörleri engellediği için üretici yazamayıp görev duruyordu. Kapı 1 bunu da kontrol eder.
+
 ## [0.3.4] - 2026-10-22
 ### Eklendi
 - `denetci-kod`: hedef-geriye doğrulama (görev maddesi için var mı / dolu mu / bağlı mı; taslak ve çağrılmayan kod tespiti). Doğrulanamayan madde RET değil `Belirsiz:` satırı olur, böylece ret limiti korunur. `denetci-hafiza`: "yapıldı" için dosya varlığı yetmez.
