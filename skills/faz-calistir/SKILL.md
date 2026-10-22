@@ -87,7 +87,7 @@ Ne zaman: Faz A yön ve önizleme, Faz C her ekran grubu. Aynı kapı `/orkestra
 5. **Onay** → `progress.md` "Alınan kararlar"a tek satır: `görsel onay: <ekran/yön> (<tarih>)`.
 - `kanit/` klasörü kanıt içindir, commit edilmez (commit önerirken dışarıda bırak, `.gitignore` önerebilirsin).
 - Testleri ajanlar ve denetci-kod çalıştırır. Orkestra tarayıcı açmaz, tıklama yapmaz.
-- Faz C sonunda kullanıcıya ayrıca "tarayıcıda şunları dene" diye kısa bir kontrol listesi ve çalıştırma komutunu ver (etkileşim ve gerçek veri kanıtla anlaşılamaz).
+- Faz C sonunda kullanıcıya ayrıca "tarayıcıda şunları dene" diye kısa bir kontrol listesi ve çalıştırma komutunu ver (etkileşim ve gerçek veri kanıtla anlaşılamaz). `denetci-tasarim`'in `Belirsiz:` satırları bu listeye eklenir.
 
 ## 6. Faz sonu: yaz ve DUR
 1. `progress.md`'yi **bir kez** güncelle. Yeni bir oturum hiçbir şey hatırlamadan devam edebilmeli:

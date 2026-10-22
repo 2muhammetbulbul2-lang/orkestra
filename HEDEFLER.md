@@ -11,7 +11,7 @@ Sıra: önce gerçek çalıştırma, sonra buradaki maddeler. Hiçbiri kullanıc
 ## 2. Büyük repolarla karşılaştırmadan çıkan aday boşluklar (2026-10-22)
 Kaynak: GSD, spec-kit, gstack, BMAD, wshobson/agents, ECC. Hangileri yapılacağı kullanıcı kararıdır.
 - ~~Hedef-geriye doğrulama~~, ~~paket kurulumu kuralı~~, ~~injection taraması~~: v0.3.4'te eklendi (gerçek çalıştırmada etkisi denenecek).
-- Faz C için "hedef-geriye" eşdeğeri: ekran gerçekten bağlı ve çalışıyor mu (şimdilik yalnız denetci-kod/hafiza bakıyor).
+- ~~Faz C için "hedef-geriye" eşdeğeri~~: v0.6.1'de `denetci-tasarim` Faz C'ye eklendi (ekran ulaşılıyor mu, dolu mu, bağlı mı; doğrulanamayan `Belirsiz:` olarak "tarayıcıda dene" listesine gider). Gerçek koşuda etkisi denenecek.
 - ~~Görsel teyit~~ → v0.6.0'da yapıldı (Görsel onay kapısı: `ekran` MOD: KANIT + `goster.mjs`, imarmobil'in "ekran görüntüsü göster, onay al" kuralı). Kalan: gerçek Playwright ile uçtan uca koşu, etkileşim/oyun hissi kanıtı.
 - **Oyun hissi / geri bildirim (Pacman denemesi, kullanıcı oynadıktan sonra):** `fikir` "his" soruları tepki hızı ve eylem geri bildirimini (yeme, ölme, vurma) sormadı; Faz C denetçileri "eylem → görsel tepki" aramadı. Eklenecek: `fikir` şablonuna geri bildirim soruları, `denetci-tasarim` Faz C'ye eylem-tepki kontrolü.
 - **Headless koşu bulguları:** (1) `progress.md` bekleyen görevleri (v2 C4/C5) yazmazsa `faz-calistir` "hepsi bitti" der; faz bitiminde ve roadmap revizyonunda progress.md "Şu an"ı güncellemek skill'e yazılmalı. (2) Arka plan ajanı Edit izni olmadan başlarsa durur; yeni proje kurulumunda sahip klasörler için `permissions.allow` eklemek düşünülebilir (kullanıcı onayıyla).

@@ -8,7 +8,7 @@
       "name": "orkestra",
       "source": ".",
       "description": "Fikirden yol haritasına, fazlı üretim ve denetçi onaylı çoklu ajan iş akışı (Türkçe).",
-      "version": "0.6.0"
+      "version": "0.6.1"
     }
   ]
 }
