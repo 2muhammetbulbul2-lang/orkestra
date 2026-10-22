@@ -24,7 +24,7 @@ Görev metni her zaman şunları içerir:
 ```
 Görev ID / modül veya ekran adı:
 Sahip olduğun klasör: (sadece buraya yaz)
-Yapılacaklar: (roadmap.md'den)
+Yapılacaklar: (roadmap.md'den). Testleri `tests/<ad>/**` altına yaz (`src/**` içine değil); kökteki `npm test` hepsini çalıştırmalı.
 Önceki RET gerekçesi: (varsa)
 Çıktı sınırı: Sadece "Değişen dosyalar / Test sonucu / Özet (en fazla 5 madde)" döndür.
 ```
@@ -40,7 +40,8 @@ Her üretici raporundan sonra fazın denetçilerini (paralel) çağır:
 - C: `orkestra:denetci-tasarim`, `orkestra:denetci-guvenlik`
 
 Denetçiye: görev ID, sahip klasör, değişen dosyalar ve "Sadece KARAR: ONAY | RET + madde madde gerekçe döndür" yaz.
-Düzeltme sonrası sadece RET veren denetçiyi yeniden çağır.
+Düzeltme sonrası: değişiklik **yalnız test veya dokümantasyon** ise sadece RET veren denetçiyi yeniden çağır. Düzeltme **üretim kodunu** değiştirdiyse o görevin tüm denetçilerini yeniden çağır (onay verenler düzeltilmiş sürümü görmemiş olur).
+Faz B başlamadan önce testlerin çalışacağından emin ol: kök dosyaların (package.json vb.) sahibi roadmap'te yoksa dur ve kullanıcıya sor.
 
 ## 3. Ret limiti (kesin)
 - Tüm denetçiler ONAY → görev tamam.

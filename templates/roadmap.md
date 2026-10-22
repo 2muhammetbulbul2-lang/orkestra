@@ -11,7 +11,8 @@
 | ID | Faz | Görev | Ajan | Sahip klasör / dosya | Bağımlılık | Denetçiler |
 |---|---|---|---|---|---|---|
 | A1 | A | Tasarım sistemi + önizleme | tasarim-sistemi | `design-system.md`, `design-preview.html`, `design-yonler.html` | — | denetci-tasarim |
-| B1 | B | (modül) | kod-modul | `src/(modul)/**` | A1 | denetci-kod, denetci-guvenlik, denetci-hafiza |
+| B0 | B | Proje iskeleti (package.json, test komutu, .gitignore) | kod-modul | `package.json`, `.gitignore` | A1 | denetci-kod |
+| B1 | B | (modül) | kod-modul | `src/(modul)/**` | B0 | denetci-kod, denetci-guvenlik, denetci-hafiza |
 | C1 | C | (ekran) | ekran | `src/screens/(ekran)/**` | A1, B1 | denetci-tasarim, denetci-guvenlik |
 
 ## Paralel çalışma

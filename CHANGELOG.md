@@ -1,5 +1,11 @@
 # Değişiklik günlüğü
 
+## [0.3.2] - 2026-10-22
+### Düzeltildi (gerçek uçtan uca testten)
+- `dagit`: `package.json` gibi kök dosyalar için sahip atanır (gerekirse B0 iskelet görevi); Kapı 1 bunu da kontrol eder. Önceden kimsenin sahibi olmadığı için `npm test` çalışmıyordu.
+- `dagit` ve `faz-calistir`: testler her görevde `tests/<ad>/**` altına yazılır; ekran testleri `src/` içinde kalıp `npm test` dışında kalmaz.
+- `faz-calistir`: düzeltme üretim kodunu değiştirdiyse görevin tüm denetçileri yeniden çağrılır (yalnız test değiştiyse sadece RET veren).
+
 ## [0.3.1] - 2026-10-22
 ### Değişti
 - `design-yonler.html`: üstte Brif (kim için, yönler hangi eksende ayrışıyor, neden) ve her yönde "Neden bu yön?" gerekçesi (renk, yazı, referans, artı/eksi). Dayanak yoksa "araştırmasız" diye işaretlenir.
