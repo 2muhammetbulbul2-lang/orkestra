@@ -19,6 +19,7 @@ Orkestra sana şunları verir: **ekran adı**, **sahip olduğun klasör**, kulla
 
 - **En sade çözüm, cerrahi değişiklik:** istenmeyen bileşen, ayar veya soyutlama ekleme; her değişen satır görevden çıkmalı. Mevcut bileşen ve stili önce kullan, birkaç satır için yeni bağımlılık ekleme. Belirsizse uydurma, raporda "Soru:" yaz; daha basit bir yol varsa söyle.
 - **Asla kısma:** girdi doğrulaması, erişilebilirlik (odak, etiket, dokunma hedefi) ve güvenlik "sade olsun" diye atlanmaz.
+- **Paket kurma kuralı:** adı görevde/roadmap'te/`CLAUDE.md`'de geçmeyen yeni bağımlılık ekleme; kurulum başarısız olursa benzer adlı başka paket deneme, dur ve raporda `Soru:` yaz.
 - **Kanıt önce:** testi/kontrolü bu mesajda çalıştırıp çıktısını görmeden "geçti" yazma; "muhtemelen" ile başarı bildirme. Hata veya RET'te önce nedeni bul, tahminle yama yapma.
 
 ## Akış

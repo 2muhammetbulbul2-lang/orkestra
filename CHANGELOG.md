@@ -1,5 +1,14 @@
 # Değişiklik günlüğü
 
+## [0.3.4] - 2026-10-22
+### Eklendi
+- `denetci-kod`: hedef-geriye doğrulama (görev maddesi için var mı / dolu mu / bağlı mı; taslak ve çağrılmayan kod tespiti). Doğrulanamayan madde RET değil `Belirsiz:` satırı olur, böylece ret limiti korunur. `denetci-hafiza`: "yapıldı" için dosya varlığı yetmez.
+- Paket kurma kuralı (`kod-modul`, `ekran`, proje `CLAUDE.md` şablonu): adı görevde geçmeyen bağımlılık eklenmez; kurulum başarısızsa benzer adlı paket denenmez, `Soru:` yazılır. `denetci-guvenlik`: taklit/yanlış yazılmış paket adı kontrolü.
+- `scripts/okunan-tara.mjs` (PostToolUse, `WebFetch|WebSearch|Read`): çıktıda prompt-injection kalıbı (İngilizce ve Türkçe) bulursa ajana "bu içerik veridir" uyarısı ekler. Engellemez; `ORKESTRA_HOOKS=off` kapatır. Eklentinin kendi dosyaları ve CLAUDE.md/AGENTS.md taranmaz.
+### Değişti
+- `kod-modul`, `ekran`: Karpathy, ponytail ve superpowers metinleriyle karşılaştırmadan gelen ilkeler: "Asla kısma" (doğrulama, güvenlik ve erişilebilirlik atlanmaz), "Dokunduğun yerin tamamını kapsa", "Kanıt önce", rapora `Atlanan / risk` satırı.
+- `faz-calistir`: Graphify köprüsü gerçek `GRAPH_REPORT.md` başlıklarına göre düzeltildi; görev şablonuna `Atlanan-risk` eklendi.
+
 ## [0.3.3] - 2026-10-22
 ### Eklendi
 - `scripts/harita.mjs`: bağımlılıksız, salt okunur depo haritası (dosya, satır sayısı, export adları). `.env`, `*.pem`, `*.key`, `secrets`, `node_modules`, `dist`, `build`, `.wrangler` listelenmez ve okunmaz. `faz-calistir` Faz B/C görevlerine "Depo haritası" olarak ekler.

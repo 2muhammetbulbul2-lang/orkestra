@@ -10,6 +10,16 @@
             "timeout": 150
           }
         ]
+      },
+      {
+        "matcher": "WebFetch|WebSearch|Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/okunan-tara.mjs\"",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "Stop": [
