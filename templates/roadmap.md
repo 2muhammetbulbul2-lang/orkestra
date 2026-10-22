@@ -15,7 +15,7 @@
 | B1 | B | (modül) | (ör. `npm test` içinde şu 3 davranış test edilir ve geçer) | kod-modul | `src/(modul)/**` | B0 | denetci-kod, denetci-guvenlik, denetci-hafiza |
 | C1 | C | (ekran) | (ör. şu eylem yapılınca ekranda şu görünür) | ekran | `src/screens/(ekran)/**` | A1, B1 | denetci-tasarim, denetci-guvenlik |
 
-> **Bitti ölçütü** her görevde zorunlu, tek cümle ve doğrulanabilir: bir komutun çıktısı, bir davranış veya ekranda görünen bir şey. "Düzgün çalışır", "tamamlandı" ölçüt değildir. Üretici raporunda ölçüt için kanıt (komut veya gözlem → sonuç) verir, denetçi ölçütün karşılandığına bakar. Doğrulanamayan ölçüt yazılırsa "Doğrulama:" ile kim nasıl bakacak belirtilir (örn. "kullanıcı tarayıcıda açar").
+> **Bitti ölçütü** her görevde zorunlu, tek cümle ve doğrulanabilir: bir komutun çıktısı, bir davranış veya ekranda görünen bir şey. "Düzgün çalışır", "tamamlandı" ölçüt değildir. Ölçüt, hangi gereksinimi (fikir.md R1, R2...) karşıladığını başında belirtir: "(R2) ...". Gereksinimle ilgisi olmayan görev (iskelet gibi) "(R-)" yazar. Üretici raporunda ölçüt için kanıt (komut veya gözlem → sonuç) verir, denetçi ölçütün karşılandığına bakar. Doğrulanamayan ölçüt yazılırsa "Doğrulama:" ile kim nasıl bakacak belirtilir (örn. "kullanıcı tarayıcıda açar").
 
 ## Paralel çalışma
 - Paralel grup B: (bağımsız B görevleri)

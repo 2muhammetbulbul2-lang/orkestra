@@ -1,5 +1,9 @@
 # Değişiklik günlüğü
 
+## [0.7.0] - 2026-10-22
+### Eklendi
+- Sabit gereksinim numaraları: fikir.md başarı ölçütleri R1, R2... diye numaralanır (numara sonradan değişmez). dagit her görevin bitti ölçütüne "(R1)" diye karşıladığı numarayı yazar; Kapı 1 hiçbir görevde geçmeyen veya fikir.md'de olmayan numarayı yakalar. Şablonlar ve örnekler güncellendi.
+
 ## [0.6.1] - 2026-10-22
 ### Eklendi
 - `denetci-tasarim` Faz C: hedef-geriye doğrulama (ekran ulaşılıyor mu, dolu mu, bağlı mı). Kodda doğrulanamayan maddeler `Belirsiz:` olarak döner ve Faz C sonundaki "tarayıcıda şunları dene" listesine eklenir.

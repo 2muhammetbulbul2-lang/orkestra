@@ -40,8 +40,8 @@ Tek kişilik, çevrimdışı çalışan, sade bir yapılacaklar uygulaması.
 | Koyu tema | var / yok | var | İlk sürümde istendi |
 
 ## Başarı ölçütü
-- Yeni kullanıcı ilk görevini 10 saniyede ekleyebiliyor.
-- Lighthouse erişilebilirlik puanı ≥ 95, mobilde yatay kaydırma yok.
+- R1: Yeni kullanıcı ilk görevini 10 saniyede ekleyebiliyor.
+- R2: Lighthouse erişilebilirlik puanı ≥ 95, mobilde yatay kaydırma yok.
 
 ## Açık sorular
 - (yok)

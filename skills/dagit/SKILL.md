@@ -26,7 +26,7 @@ Revize notu (varsa): $ARGUMENTS
 - **Testler her görevde `tests/<ad>/**` altındadır** (B ve C dahil) ve görevin sahip klasörüne yazılır; böylece kökteki tek `npm test` hepsini çalıştırır. Test dosyası `src/**` içine konmaz.
 - **Faz B:** fikir.md'deki her özellik için bağımsız modüller; ajan `kod-modul`; her modüle **ayrı** klasör (örn. `src/todos/**`).
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
-- Her görev: ID, faz, **bitti ölçütü**, ajan, sahip klasör, bağımlılık, denetçiler. Bitti ölçütü tek cümle ve doğrulanabilir olmalı (komut çıktısı, test, ekranda görünen davranış). "Düzgün çalışır", "tamamlanır" yazma. Kod ölçütlerini test komutuna, ekran ölçütlerini görünür bir sonuca bağla; makinenin doğrulayamayacağı ölçütün sonuna "Doğrulama: kullanıcı ... dener" ekle. Ölçütü fikir.md'deki başarı ölçütlerinden türet.
+- Her görev: ID, faz, **bitti ölçütü**, ajan, sahip klasör, bağımlılık, denetçiler. Bitti ölçütü tek cümle ve doğrulanabilir olmalı (komut çıktısı, test, ekranda görünen davranış). "Düzgün çalışır", "tamamlanır" yazma. Kod ölçütlerini test komutuna, ekran ölçütlerini görünür bir sonuca bağla; makinenin doğrulayamayacağı ölçütün sonuna "Doğrulama: kullanıcı ... dener" ekle. Ölçütü fikir.md'deki başarı ölçütlerinden türet ve başına karşıladığı gereksinim numarasını yaz: "(R1) ...", birden fazlaysa "(R1,R3)", ilgisiz görev (iskelet) için "(R-)". fikir.md'de numara yoksa (eski dosya) önce başarı ölçütlerine R1, R2... numarası ver, anlamını değiştirme.
   (A: denetci-tasarim · B: denetci-kod + denetci-guvenlik + denetci-hafiza · C: denetci-tasarim + denetci-guvenlik).
 - Paralel gruplar ve çakışma notu. Mermaid `flowchart` ile bağımlılık diyagramı.
 - Durum: `TASLAK`.
@@ -36,7 +36,7 @@ roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - fikir.md'deki her temel özellik en az bir göreve karşılık geliyor mu? (eksik görev)
 - Kapsam dışı bir şey görev olmuş mu?
 - Kök dosyaların (`package.json`, yapılandırma, `index.html` gibi) her birinin bir sahibi var mı? Test komutunu çalıştıracak bir görev var mı?
-- Her görevin bitti ölçütü var mı, tek cümle ve doğrulanabilir mi? fikir.md'deki her başarı ölçütü en az bir görevin ölçütüne yansıyor mu?
+- Her görevin bitti ölçütü var mı, tek cümle ve doğrulanabilir mi? fikir.md'deki her gereksinim numarası (R1, R2...) en az bir görevin ölçütünde geçiyor mu? Hiçbir görevde geçmeyen numara "karşılanmayan gereksinim"dir: görev ekle veya kullanıcıdan kapsam dışı onayı al. Roadmap'te fikir.md'de olmayan bir numara var mı?
 - Hiçbir sahip klasörü yasaklı ad (`node_modules`, `dist`, `build`, `.wrangler`, `secrets`) içermiyor mu?
 - İki görevin sahip klasörü çakışıyor mu? Çakışıyorsa: sırala (bağımlılık ekle) veya `worktree` notu düş.
 - Döngüsel bağımlılık var mı?

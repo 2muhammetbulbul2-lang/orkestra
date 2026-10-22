@@ -39,8 +39,8 @@
 | | | | |
 
 ## Başarı ölçütü
-(Ölçülebilir: "X kullanıcı Y işini Z saniyede yapabiliyor".)
--
+(Ölçülebilir: "X kullanıcı Y işini Z saniyede yapabiliyor". Her maddeye sabit numara ver: R1, R2... Numara sonradan değişmez; silinen maddenin numarası boş kalır, yeniden kullanılmaz.)
+- R1:
 
 ## Açık sorular
 -

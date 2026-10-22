@@ -23,7 +23,7 @@ Amaç: kullanıcının aklındakini **tahmin etmeden** öğrenmek ve seçimleri 
    - **Veri ve gizlilik:** ne saklanıyor, nerede (cihaz / sunucu), hesap gerekir mi, hassas veri var mı?
    - **Platform ve kısıtlar:** web / mobil / masaüstü, çevrimdışı çalışma, süre, bütçe, mevcut teknoloji.
    - **His ve görünüm:** hangi uygulamalara benzesin / benzemesin, sakin mi canlı mı, referanslar.
-   - **Başarı ölçütü:** ölçülebilir olmalı.
+   - **Başarı ölçütü:** ölçülebilir olmalı. Her maddeyi fikir.md'de sabit numarayla yaz (R1, R2...). Sonradan numara değiştirme; madde silinirse numarası boş kalır.
 
 3. **Araştırma turu.** Konu benzer ürünler, hazır bileşen/servis seçimi (ücretsiz mi ücretli mi) veya görsel referans gerektiriyorsa `orkestra:arastirmaci` ajanını çağır. Görev metni:
    ```
