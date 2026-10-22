@@ -17,6 +17,9 @@
 
 > **Bitti ölçütü** her görevde zorunlu, tek cümle ve doğrulanabilir: bir komutun çıktısı, bir davranış veya ekranda görünen bir şey. "Düzgün çalışır", "tamamlandı" ölçüt değildir. Ölçüt, hangi gereksinimi (fikir.md R1, R2...) karşıladığını başında belirtir: "(R2) ...". Gereksinimle ilgisi olmayan görev (iskelet gibi) "(R-)" yazar. Üretici raporunda ölçüt için kanıt (komut veya gözlem → sonuç) verir, denetçi ölçütün karşılandığına bakar. Doğrulanamayan ölçüt yazılırsa "Doğrulama:" ile kim nasıl bakacak belirtilir (örn. "kullanıcı tarayıcıda açar").
 
+## Tasarım gerektiren görevler (Faz B, kod yazılmadan önce `tasarim/<ID>.md`)
+- (ID — neden: dış servis/ücret, kullanıcı verisi, güvenlik/yetki, geri alınamaz işlem, 3+ görevin bağlı olduğu çekirdek, belirsiz teknik seçim. Yoksa "yok".)
+
 ## Paralel çalışma
 - Paralel grup B: (bağımsız B görevleri)
 - Çakışma / sıralama notu: (aynı dosyaya dokunan görevler ve çözüm: sırala | worktree)

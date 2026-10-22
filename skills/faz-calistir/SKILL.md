@@ -33,6 +33,7 @@ Bitti ölçütü: (roadmap.md'deki görev satırından, aynen)
 Yapılacaklar: (roadmap.md'den). Testleri `tests/<ad>/**` altına yaz (`src/**` içine değil); kökteki `npm test` hepsini çalıştırmalı.
 Depo haritası: (varsa, yukarıdaki çıktı)
 Graphify özeti: (varsa, en fazla 15 satır)
+Tasarım: (Faz B, tasarim/<ID>.md ONAYLI ise yolu)
 Önceki RET gerekçesi: (varsa)
 Çıktı sınırı: Sadece "Değişen dosyalar / Test sonucu / Ölçüt kanıtı (komut veya gözlem → sonuç) / Özet (en fazla 5 madde) / Atlanan-risk (tek satır)" döndür.
 ```
@@ -72,6 +73,15 @@ Faz B başlamadan önce testlerin çalışacağından emin ol: kök dosyaların 
 5. Denetçi ONAY verir (ret limiti geçerli).
 6. **Görsel onay kapısı'nı** `design-preview.html` için çalıştır (tam sayfa, mobil + masaüstü). Kullanıcıya **tek mesajda** sun: kanıt görüntüleri + `design-preview.html` (tarayıcıda aç) + 5 maddelik özet. Sor: **"Onay mı, revize mi?"** Revize → notu ajana ver, denetçi tekrar bakar, yine tek mesajla sun.
 - Orkestra görseli kendisi **çizmez**, widget/ekran görüntüsü üretmez; kanıtı `ekran` ajanı üretir.
+
+## 4b. Faz B'ye özel: önce modül tasarımı (riskli görevler için)
+roadmap.md "Tasarım gerektiren görevler" listesi "yok" değilse, listedeki her görev için **kod başlamadan**:
+1. `tasarim/<ID>.md` yoksa: seçenek araştırması gerekiyorsa (dış servis, ücretli/ücretsiz, kütüphane seçimi) önce `orkestra:arastirmaci`'yı çağır (konu: o görevin 3 seçeneği, kaynaklı; en fazla 3 arama; sonuç `arastirma.md`ye). Sonra `orkestra:kod-modul`'ü görev metnine `MOD: TASARIM` ekleyerek çağır. Bu modda kod yazmaz; yalnız `${CLAUDE_PLUGIN_ROOT}/templates/tasarim-modul.md` biçiminde `tasarim/<ID>.md` yazar (problem, 3 seçenek, pre-mortem, kabul ve vazgeçme ölçütü, test planı). Sahibi olduğu klasöre değil yalnız bu dosyaya yazar.
+2. Tasarım dosyalarını kullanıcıya **tek mesajda** sun: görev başına 3 satır (seçilen yol ve nedeni, en büyük risk, vazgeçme ölçütü) + dosya yolu. Sor: **"Onay mı, revize mi?"** Onaylanan dosyanın durumunu `ONAYLI` yap. Onaysız görevin kodu yazılmaz; diğer görevler sürebilir.
+3. Kod aşamasında görev metnine `Tasarım: tasarim/<ID>.md (ONAYLI)` ekle. `kod-modul` seçilen yoldan sapmaz; sapması gerekiyorsa raporda `Soru:` yazar, orkestra kullanıcıya sorar. Test planındaki yollar kullanılır; canlı sisteme dokunma ancak tasarımda yazılı ve kullanıcı onaylıysa olur.
+4. Denetçilere (özellikle `denetci-kod`) tasarım dosyasının yolunu ver: kabul ölçütü ve test planına uyum denetlenir.
+5. Görev 2. RET'e düşerse kullanıcıya sunarken tasarımdaki **vazgeçme ölçütünü** de göster ve "seçenek 2'ye geç" seçeneğini ekle.
+Liste boşsa veya görev listede değilse bu aşama atlanır.
 
 **Faz C'ye özel:** her ekran (veya aynı gruptaki ekranlar) için denetçiler ONAY verdikten sonra **Görsel onay kapısı** çalışır; kullanıcı o ekranı onaylamadan bir sonraki ekran grubuna ve faz sonuna geçilmez.
 

@@ -1,5 +1,13 @@
 # Değişiklik günlüğü
 
+## [0.12.0] - 2026-10-23
+Başka bir sohbetteki "Faz 0 - Araştırma ve Tasarım" yaklaşımından: riskli modüller kod yazılmadan önce kısa bir tasarım dosyasından ve kullanıcı onayından geçer.
+### Eklendi
+- `templates/tasarim-modul.md`: problem, en az 3 seçenek, pre-mortem, kabul ölçütü, vazgeçme ölçütü, test planı (en fazla 60 satır).
+- `dagit`: roadmap'te "Tasarım gerektiren görevler" bölümü (dış servis/ücret, kullanıcı verisi, güvenlik, geri alınamaz işlem, çekirdek modül, belirsiz teknik seçim); Kapı 1 bunu denetler.
+- `faz-calistir` Faz B "4b": listedeki görevler için araştırmacı + `kod-modul` `MOD: TASARIM` → `tasarim/<ID>.md` → kullanıcı onayı; onaysız kod yazılmaz; 2. RET'te vazgeçme ölçütü gösterilir.
+- `kod-modul`: `MOD: TASARIM` ve onaylı tasarımdan sapmama kuralı. `denetci-kod`: tasarıma uyum kontrolü (madde 8).
+
 ## [0.11.0] - 2026-10-23
 Tetris Faz A deneme koşusundan çıkan iki ders: denetçi yalnız kod okuyup betikle dolan boş önizlemeye ONAY verdi; kısa "sade, sakin" cevabı sıradan bir tasarım üretti.
 ### Değişti

@@ -28,6 +28,7 @@ Revize notu (varsa): $ARGUMENTS
 - **Faz C:** ekranlar; ajan `ekran`; her ekrana ayrı klasör.
 - Her görev: ID, faz, **bitti ölçütü**, ajan, sahip klasör, bağımlılık, denetçiler. Bitti ölçütü tek cümle ve doğrulanabilir olmalı (komut çıktısı, test, ekranda görünen davranış). "Düzgün çalışır", "tamamlanır" yazma. Kod ölçütlerini test komutuna, ekran ölçütlerini görünür bir sonuca bağla; makinenin doğrulayamayacağı ölçütün sonuna "Doğrulama: kullanıcı ... dener" ekle. Ölçütü fikir.md'deki başarı ölçütlerinden türet ve başına karşıladığı gereksinim numarasını yaz: "(R1) ...", birden fazlaysa "(R1,R3)", ilgisiz görev (iskelet) için "(R-)". fikir.md'de numara yoksa (eski dosya) önce başarı ölçütlerine R1, R2... numarası ver, anlamını değiştirme.
   (A: denetci-tasarim · B: denetci-kod + denetci-guvenlik + denetci-hafiza · C: denetci-tasarim + denetci-guvenlik).
+- **Tasarım gerektiren görevler:** Faz B görevlerinden riskli olanları roadmap'teki "Tasarım gerektiren görevler" bölümüne yaz (neden ile): dış servis veya ücret, kullanıcı verisi, güvenlik/yetki, geri alınamaz işlem, 3+ görevin bağlı olduğu çekirdek, belirsiz teknik seçim. Küçük ve bilinen işler (basit ekran verisi, yardımcı fonksiyon) listeye girmez; liste boşsa "yok" yaz. Bu görevler Faz B'de kod yazılmadan önce `tasarim/<ID>.md` ile kullanıcı onayından geçer.
 - Paralel gruplar ve çakışma notu. Mermaid `flowchart` ile bağımlılık diyagramı.
 - Durum: `TASLAK`.
 
@@ -48,6 +49,7 @@ roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - Hiçbir sahip klasörü yasaklı ad (`node_modules`, `dist`, `build`, `.wrangler`, `secrets`) içermiyor mu?
 - İki görevin sahip klasörü çakışıyor mu? Çakışıyorsa: sırala (bağımlılık ekle) veya `worktree` notu düş.
 - Döngüsel bağımlılık var mı?
+- "Tasarım gerektiren görevler" bölümü dolu mu (ya da "yok" mu)? Listedeki her ID roadmap'te Faz B görevi mi? Dış servis/kullanıcı verisi/güvenlik içeren bir B görevi listede yoksa sebebini söyle veya ekle.
 - CLAUDE.md 1–4. bölümlerinde yer tutucu `(...)` kaldı mı? Kalan her biri ya kullanıcıya sorulacak ya da `(B0 sonrası)` olarak işaretli olmalı; uydurma değer yok.
 Sorun varsa roadmap.md'yi düzelt ve Kapı 1'i tekrarla. Sonucu "Kapı kayıtları"na yaz.
 
