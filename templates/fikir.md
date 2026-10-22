@@ -32,6 +32,7 @@
 ## His ve görünüm
 - Benzesin / benzemesin:
 - Ton (sakin, canlı, ciddi...):
+- Karakter (ekranda akılda kalacak tek şey: renk, şekil, yazı, hareket; "sade" tek başına yetmez):
 - Geri bildirim (eylem → tepki; örn. "noktayı yemek → nokta kaybolur, skor artar, kısa ses"; hata/başarı ve tepki hızı dahil):
 
 ## Kararlar

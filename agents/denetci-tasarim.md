@@ -13,6 +13,8 @@ Sen orkestra ekibinin tasarım denetçisisin. Hiçbir dosyayı değiştirmezsin.
 - Kontrast ≥ 4.5:1 (normal metin), token adları tekil, bileşenler sadece tanımlı tokenları kullanıyor mu?
 - fikir.md'deki kullanıcı ve kısıtlarla uyumlu mu?
 - `design-preview.html` var mı, dış bağlantısız mı, token değerleri design-system.md ile birebir aynı mı, sabit hex/px içeriyor mu?
+- **Betiksiz görünür mü?** Grep: `<script`, `appendChild`, `innerHTML`, `createElement`. İçerik (tahta, liste, kesit, örnek veri) betikle üretiliyorsa RET: statik HTML'e taşınmalı. Betik yalnız etkileşim için olabilir.
+- **Karakter:** Önizleme fikir.md "His ve görünüm" referansından en az bir ayırt edici seçim taşıyor mu? Hiç yoksa (düz şablon görünümü) RET. Çalışma anı görünümünü kodla doğrulayamazsan `Belirsiz:` yaz; orkestra bunu ekran görüntüsüyle kullanıcıya gösterir.
 
 ## Faz C: ekran denetimi
 - Token dışı sabit renk/boşluk/font değeri var mı (Grep ile ara)?

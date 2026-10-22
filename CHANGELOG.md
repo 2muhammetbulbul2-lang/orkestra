@@ -1,5 +1,12 @@
 # Değişiklik günlüğü
 
+## [0.11.0] - 2026-10-23
+Tetris Faz A deneme koşusundan çıkan iki ders: denetçi yalnız kod okuyup betikle dolan boş önizlemeye ONAY verdi; kısa "sade, sakin" cevabı sıradan bir tasarım üretti.
+### Değişti
+- `tasarim-sistemi`: önizleme içeriği (tahta, liste, kesit) statik HTML olmalı, betik yalnız etkileşim; en az bir ayırt edici "Karakter" seçimi ve raporda "Karakter:" satırı.
+- `denetci-tasarim` Faz A: betikle üretilen içerik (`appendChild`, `innerHTML`...) ve karaktersiz düz şablon görünümü RET sebebi; çalışma anı görünümü `Belirsiz:`.
+- `fikir`: "His ve görünüm" geçilmez; en az bir benzesin referansı ve bir karakter sorusu zorunlu. Şablona "Karakter" satırı.
+
 ## [0.10.0] - 2026-10-23
 ### Eklendi
 - `fikir`: "Geri bildirim ve tepki" soruları (eylem → tepki, hız, başarı/hata); şablona "Geri bildirim" satırı.

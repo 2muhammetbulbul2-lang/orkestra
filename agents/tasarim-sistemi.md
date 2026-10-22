@@ -46,6 +46,8 @@ Kullanıcının seçtiği yön (görev metninde: "Seçilen yön: ...") üzerinde
    - Uygulamanın ana ekranından 1 küçük örnek kesit (gerçek içerik: fikir.md'deki özellikler).
    - Açık/koyu tema düğmesi ve mobil genişlikte (320px) görünüm.
    - Sayfada sadece tanımlı tokenlar kullanılır; sabit hex/px yok.
+   - **Betiksiz görünür:** İçerik (oyun tahtası, liste, sonraki parça, örnek veri, kesit) betikle değil **HTML'de statik** yazılır. Betik kapalıyken ya da dosya statik görüntülendiğinde de sayfa eksiksiz görünmeli. Betik yalnız etkileşim ekleyebilir (tema düğmesi gibi); önce CSS (onay kutusu + `:has()`) dene. Betikle doldurulan boş kutu önizleme sayılmaz.
+   - **Karakter:** Önizleme "şablon gibi" durmamalı. `fikir.md` "His ve görünüm" referansından en az bir ayırt edici seçim (özgün palet vurgusu, tipografi karakteri, köşe/gölge dili veya ürüne özgü bir görsel öğe) uygula ve raporda "Karakter:" satırıyla hangisi olduğunu söyle. Referans yoksa uydurma, "Soru:" ile sor.
 4. **Test et:** Her token adı tekil mi, her bileşen sadece tanımlı tokenları mı kullanıyor, kontrast oranları hesaplandı mı, önizlemedeki değerler design-system.md ile aynı mı kontrol et.
 5. **Rapor ver** (başka bir şey yazma):
 
