@@ -32,6 +32,7 @@
 ## His ve görünüm
 - Benzesin / benzemesin:
 - Ton (sakin, canlı, ciddi...):
+- Geri bildirim (eylem → tepki; örn. "noktayı yemek → nokta kaybolur, skor artar, kısa ses"; hata/başarı ve tepki hızı dahil):
 
 ## Kararlar
 | Konu | Seçenekler | Seçilen | Neden |

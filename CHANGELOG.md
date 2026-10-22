@@ -1,5 +1,12 @@
 # Değişiklik günlüğü
 
+## [0.10.0] - 2026-10-23
+### Eklendi
+- `fikir`: "Geri bildirim ve tepki" soruları (eylem → tepki, hız, başarı/hata); şablona "Geri bildirim" satırı.
+- `denetci-tasarim` Faz C: eylem → tepki kontrolü (işleyici var ama ekranda tepki yoksa RET; tepki hissi `Belirsiz:`).
+### Değişti
+- `faz-calistir`: faz sonunda progress.md "Şu an" bölümü zorunlu; kalan görevler ID ile sayılır, "hepsi bitti" yalnız tüm görevler ONAY ise.
+
 ## [0.9.0] - 2026-10-23
 ### Değişti
 - `dagit`: yeni 2b adımı, roadmap'ten sonra `CLAUDE.md` 1–4. bölümlerini (amaç, teknoloji, komutlar, klasör haritası) fikir.md/arastirma.md/roadmap.md'den doldurur; bilinmeyeni uydurmaz, sorar. Kapı 1 kalan yer tutucuyu kontrol eder.

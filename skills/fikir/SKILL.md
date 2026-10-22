@@ -23,6 +23,7 @@ Amaç: kullanıcının aklındakini **tahmin etmeden** öğrenmek ve seçimleri 
    - **Veri ve gizlilik:** ne saklanıyor, nerede (cihaz / sunucu), hesap gerekir mi, hassas veri var mı?
    - **Platform ve kısıtlar:** web / mobil / masaüstü, çevrimdışı çalışma, süre, bütçe, mevcut teknoloji.
    - **His ve görünüm:** hangi uygulamalara benzesin / benzemesin, sakin mi canlı mı, referanslar.
+   - **Geri bildirim ve tepki** (oyun, animasyon, etkileşimli ürün varsa mutlaka sor): kullanıcı bir eylem yapınca (dokunma, tuş, yeme, vurma, ölme, kaydetme, hata) ne görmeli/duymalı/hissetmeli? Tepki ne kadar hızlı olmalı (anında / kısa animasyon)? Başarı ve hata için ayrı geri bildirim var mı (görsel, ses, titreşim)? Cevapları fikir.md "His ve görünüm > Geri bildirim" altına eylem → tepki biçiminde yaz; bilinmiyorsa "Açık sorular"a.
    - **Başarı ölçütü:** ölçülebilir olmalı. Her maddeyi fikir.md'de sabit numarayla yaz (R1, R2...). Sonradan numara değiştirme; madde silinirse numarası boş kalır.
 
 3. **Araştırma turu.** Konu benzer ürünler, hazır bileşen/servis seçimi (ücretsiz mi ücretli mi) veya görsel referans gerektiriyorsa `orkestra:arastirmaci` ajanını çağır. Görev metni:

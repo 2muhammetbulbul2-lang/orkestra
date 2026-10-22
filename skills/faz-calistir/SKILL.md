@@ -92,6 +92,7 @@ Ne zaman: Faz A yön ve önizleme, Faz C her ekran grubu. Aynı kapı `/orkestra
 ## 6. Faz sonu: yaz ve DUR
 1. `progress.md`'yi **bir kez** güncelle. Yeni bir oturum hiçbir şey hatırlamadan devam edebilmeli:
    aktif faz, tamamlanan görevler, kalanlar, durdurulan işler ve gerekçeleri, kararlar, ret sayaçları, çalıştırma/test komutları.
+   **"Şu an" bölümünü mutlaka yaz:** roadmap'te henüz yapılmamış görevleri (sonraki faz ve sonradan eklenen sürümler dahil) ID'leriyle say. Boş bırakma; "hepsi bitti" yalnız roadmap'teki her görev ONAY ise yazılır. Roadmap revize edilmişse de (yeni görev eklenmişse) "Şu an" yeniden yazılır.
 2. Kısa faz raporu: görev tablosu (ONAY / durdu), test durumu.
 3. Commit mesajı öner (`<faz>: <özet>`). Kullanıcı "commit" derse at.
 4. Şu satırla bitir ve **bekle**, sonraki faza kendiliğinden geçme:

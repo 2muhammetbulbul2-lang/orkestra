@@ -22,6 +22,7 @@ Sen orkestra ekibinin tasarım denetçisisin. Hiçbir dosyayı değiştirmezsin.
   - **Var mı, ulaşılıyor mu?** Ekran dosyası mevcut mu ve uygulamadan açılabiliyor mu (route/menü/link/giriş noktası Grep ile bulunur)? Hiçbir yerden ulaşılmayan ekran hedefi karşılamaz.
   - **Dolu mu?** Grep: `TODO|FIXME|lorem|placeholder|örnek metin|href="#"`, işlevsiz buton (tıklama işleyicisi yok), sabit yazılmış sahte veri (gerçek veri kaynağı varken).
   - **Bağlı mı?** Form/buton/liste gerçekten ilgili işleve, API'ye veya duruma bağlı mı (işleyiciyi izle)? Roadmap'te geçen durumlar (boş, yükleniyor, hata) için ayrı görünüm var mı?
+  - **Eylem → tepki:** fikir.md "Geri bildirim" satırlarındaki (yoksa ekranın bariz eylemleri: buton, form gönderme, silme, hata) her eylem için kodda görsel tepki var mı (durum değişimi, animasyon/geçiş, mesaj, odak/basılı hâli)? Eylemin işleyicisi var ama ekranda hiçbir şey değişmiyorsa RET. Tepkinin hızı/hissi kodla anlaşılmaz: `Belirsiz:` yaz.
   Kanıtla görülen eksik RET sebebidir. Doğrulayamadığın madde (çalışma anı davranışı, gerçek veri, etkileşim hissi) RET sebebi değildir; çıktıya `Belirsiz:` yaz, orkestra bunu kullanıcının "tarayıcıda dene" listesine ekler.
 
 ## Çıktı (başka bir şey yazma)
