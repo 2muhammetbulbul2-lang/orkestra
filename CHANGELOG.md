@@ -1,5 +1,15 @@
 # Değişiklik günlüğü
 
+## [0.14.1] - 2026-10-24
+Alışkanlık takibi koşusunun (orkestra-deneme-aliskanlik) incelenmesinden. Bağlam ölçümü: oturum taban yükü 78-90 bin token, alt ajan çıktıları toplamı yaklaşık 15 bin token; şişme esas olarak tabandan.
+### Değişti
+- `faz-calistir`: her faz ayrı commit alır (`progress.md` + `kararlar.md` dahil, `kanit/` hariç); önceki faz commit'siz sonraki faza geçilmez. Ana oturum `design-system.md`, `fikir.md`, `tasarim/*.md` ve kaynak dosyaları okumaz, ajanlara yol verir (bağlam tasarrufu).
+- `oturum-kapat`: commit önerisine `progress.md` ve `kararlar.md` dahil; commit sonrası bekleyen hafıza dosyası kalmaması kontrol edilir (testte son güncelleme commit dışı kalmıştı).
+- `dagit` Kapı 1: görsel kanıt gerekiyorsa Playwright kararı bir kez sorulur, `kararlar.md`, roadmap ve `CLAUDE.md` Komutlar'a yazılır; faz içinde tekrar sorulmaz (testte karar iki kez değişmişti).
+- `okunan-tara`: `CLAUDE_PLUGIN_ROOT` yokken (worktree, elle klon) de adı `orkestra` olan eklentinin kendi dosyaları taranmaz; changelog ve betik okumalarındaki yanlış alarm biter.
+### Test
+- `test/betikler.test.mjs`: 2 yeni test (toplam 39). Not: `node --test test/` klasör argümanı bu Node sürümünde çalışmıyor; dosyaları açıkça ver: `node --test test/betikler.test.mjs test/kapilar.test.mjs`.
+
 ## [0.14.0] - 2026-10-23
 Plugin sağlamlaştırma turu: "kural talimat olarak yazılı" olan yerlerin bir kısmı hook ile zorlanır, kapıların bilinen kaçış yolları kapatıldı.
 ### Eklendi

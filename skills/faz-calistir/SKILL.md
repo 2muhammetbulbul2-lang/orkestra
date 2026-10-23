@@ -17,6 +17,7 @@ argument-hint: "A | B | C"
 - Görev tablosunda **Bitti ölçütü** sütunu yoksa veya bir görevin ölçütü boşsa dur, `/orkestra:dagit` ile ölçüt eklenmesini iste (eski roadmap'lerde). Kullanıcı "ölçütsüz devam" derse devam et ve progress.md'ye not düş.
 - Önceki faz onaylanmamışsa (B için A, C için B) dur ve söyle.
 - **Bir çağrıda sadece bir faz** yürütülür.
+- **Gereksiz okuma yok (bağlam):** ana oturum `design-system.md`, `fikir.md`, `tasarim/*.md` ve kaynak dosyaları **okumaz**; ajanlara dosya yolunu verir, onlar okur. Orkestra yalnız `roadmap.md`, `progress.md`, `kararlar.md`, `CLAUDE.md` okur. Bir karar için tek bölüm gerekiyorsa o bölümü Grep ile al. Ajan raporları "Çıktı sınırı"nı aşarsa kısa tutmasını iste.
 
 ## 1. Dağıt
 Fazın görevlerini bağımlılık sırasına göre al. Her görev için ilgili ajanı çağır:
@@ -109,7 +110,7 @@ Kullanıcı bir seçim yaptığında (yön seçimi, tasarım onayı veya revizes
    aktif faz, tamamlanan görevler, kalanlar, durdurulan işler ve gerekçeleri, kararlar, ret sayaçları, çalıştırma/test komutları.
    **"Şu an" bölümünü mutlaka yaz:** roadmap'te henüz yapılmamış görevleri (sonraki faz ve sonradan eklenen sürümler dahil) ID'leriyle say. Boş bırakma; "hepsi bitti" yalnız roadmap'teki her görev ONAY ise yazılır. Roadmap revize edilmişse de (yeni görev eklenmişse) "Şu an" yeniden yazılır.
 2. Kısa faz raporu: görev tablosu (ONAY / durdu), test durumu.
-3. Commit mesajı öner (`<faz>: <özet>`). Kullanıcı "commit" derse at.
+3. **Her faz ayrı commit alır.** Faz bittiğinde (Faz C'de her onaylı ekran grubu sonunda da) commit mesajı öner (`<faz>: <özet>`); `progress.md` ve `kararlar.md` aynı commit'e girer, `kanit/` girmez. Kullanıcı "commit" derse at. Sonraki faza, önceki fazın commit'i atılmadan veya kullanıcı "commitsiz devam" demeden geçme; sonraki fazın ön kontrolünde `git status --short` ile bekleyen değişiklik varsa hatırlat. Fikir, roadmap ve tasarım dosyaları Faz A'dan önce ayrı bir `fikir/dağıtım` commit'i olabilir.
 4. Şu satırla bitir ve **bekle**, sonraki faza kendiliğinden geçme:
    > Faz X bitti. Token tasarrufu için şimdi `/clear` yaz, sonra `/orkestra:faz-calistir Y` ile devam et. Yeni oturum roadmap.md ve progress.md'den kaldığı yerden başlar.
    (Faz C sonunda: `/orkestra:oturum-kapat` öner.)

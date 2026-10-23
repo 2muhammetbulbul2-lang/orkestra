@@ -51,6 +51,7 @@ roadmap.md'yi fikir.md ile karşılaştır ve kullanıcıya kısaca raporla:
 - Döngüsel bağımlılık var mı?
 - "Tasarım gerektiren görevler" bölümü dolu mu (ya da "yok" mu)? Listedeki her ID roadmap'te Faz B görevi mi? Dış servis/kullanıcı verisi/güvenlik içeren bir B görevi listede yoksa sebebini söyle veya ekle.
 - CLAUDE.md 1–4. bölümlerinde yer tutucu `(...)` kaldı mı? Kalan her biri ya kullanıcıya sorulacak ya da `(B0 sonrası)` olarak işaretli olmalı; uydurma değer yok.
+- **Görsel kanıt (Playwright):** Faz A veya C'de ekran görüntüsü kanıtı gerekiyor mu (görsel arayüz var mı)? Gerekiyorsa `kararlar.md`'de Playwright kararı var mı bak. Yoksa kullanıcıya **bir kez** sor: "Görsel kanıt için Playwright (ekran görüntüsü aracı) kurulsun mu? 1) bu projede kur, 2) kurma, kanıtı tarayıcıda açıp ben bakarım." Cevabı `kararlar.md`'ye yaz ve roadmap.md ile `CLAUDE.md` 3. bölümüne (Komutlar) bir satır olarak yansıt. Kurulumu orkestra yapmaz; B0 veya Faz C'nin ilk görevi kod-modul/ekran ajanıyla yapılır. Karar verildikten sonra faz içinde yeniden sorulmaz.
 Sorun varsa roadmap.md'yi düzelt ve Kapı 1'i tekrarla. Sonucu "Kapı kayıtları"na yaz.
 
 ## 4. Kapı 2 — kullanıcı onayı
