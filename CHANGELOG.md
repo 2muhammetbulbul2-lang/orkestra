@@ -1,5 +1,18 @@
 # Değişiklik günlüğü
 
+## [0.14.0] - 2026-10-23
+Plugin sağlamlaştırma turu: "kural talimat olarak yazılı" olan yerlerin bir kısmı hook ile zorlanır, kapıların bilinen kaçış yolları kapatıldı.
+### Eklendi
+- `scripts/sahiplik-kapi.mjs` (PreToolUse Edit|Write): hook girdisindeki `agent_type` ile `kod-modul`/`ekran`/`tasarim-sistemi` yazmaları `roadmap.md` sahip yollarına ve ek izinli klasörlere (`tasarim/`, `tests/`, `kanit/`) sınırlanır; hafıza dosyaları üreticiye kapalıdır. Worktree yolları, scratchpad, `ORKESTRA_HOOKS=off` ve roadmap'siz proje (yalnız hafıza kuralı) ele alındı.
+- `scripts/ortak.mjs`: lint/test komutu bulma ve çalıştırma tek yerde. `.orkestra/komutlar.json` ile her ekosistem; `package.json` yoksa commit kapısında Cargo ve Go otomatik.
+- `test/kapilar.test.mjs`: 8 yeni test (toplam 37).
+### Değişti
+- `git-kapi`: `git -C`, `git -c`, genel seçenekler, `bash -c "git commit"` ve zincirli komutlar yakalanır; `git add .`/`-A`/`-u` ve `commit -a` ile girecek gizli dosyalara bakılır (`.gitignore` sayılır); `secrets` klasör adı tek başına da eşleşir.
+- `okunan-tara`: "act as a" gibi masum belge ifadelerinde yanlış alarm azaltıldı (yalnız ayrıcalıklı roller); Türkçe kalıplar (kuralları unut, sistem istemini göster, gizli bilgiyi adrese gönder), görünmez karakter ve HTML yorumuna gizlenmiş talimat eklendi.
+- `faz-calistir` Faz A: önizleme dosyalarında betik, `fetch`, `localStorage` veya harici adres varsa `denetci-guvenlik` de çağrılır.
+### Bilinen sınır
+- Sahiplik kapısı Bash ile dosya yazmayı görmez. Kapının alt ajan çağrılarında gerçekten tetiklendiği (eklenti hook'u + `agent_type`) gerçek bir koşuda doğrulanmalı; doğrulanana kadar denetçiler asıl güvence olarak kalır.
+
 ## [0.13.0] - 2026-10-23
 ### Eklendi
 - `fikir`: proje düzeyinde ön-ölüm analizi (pre-mortem) sorusu; şablona "Riskler (pre-mortem)" bölümü. `dagit` bu risklere dokunan B görevlerini "Tasarım gerektiren görevler"e alır.

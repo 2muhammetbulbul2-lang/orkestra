@@ -19,6 +19,7 @@ Görev metninde `MOD: TASARIM` varsa **kod yazma**. Yalnız `tasarim/<görev ID>
 - Sadece sana verilen klasörün içine yazarsın (Edit/Write).
 - Başka klasörde değişiklik gerekiyorsa yapma; raporda "Dışarıda gereken değişiklik:" diye yaz.
 - `.env`, anahtar veya gizli dosya oluşturma ya da okuma.
+- Bu kural hook ile de zorlanır: sahip yolların dışına ve `roadmap.md`, `progress.md`, `CLAUDE.md` gibi hafıza dosyalarına Edit/Write engellenir. Engel mesajı gelirse yolu değiştirme, raporda "Dışarıda gereken değişiklik:" yaz.
 
 ## Çalışma ilkeleri
 - **Önce varsayımı yaz:** belirsiz bir nokta varsa uydurma; raporda "Soru:" diye yaz. Birden çok yorum mümkünse seçimini ve nedenini söyle. Görevde istenenden daha basit bir yol varsa bunu da raporda söyle.

@@ -77,15 +77,16 @@ Eklenti skill'leri eklenti adıyla çağrılır. **Komutları tek tek yaz**: bir
 
 ## Otomatik katman
 
-- **PostToolUse hook:** her Edit/Write sonrasında projenin `package.json` dosyasında `lint`/`test` script'i varsa çalışır (60 sn sınırı). Script yoksa sessizce geçer. Başarısız olursa hatayı Claude'a iletir.
-- **Git kapısı (PreToolUse, Bash):** `git commit` öncesi staged gizli dosya (`.env`, `*.pem`, `*.key`, `secrets/`) varsa veya projenin `lint`/`test` script'i kırmızıysa commit engellenir. `git push` engellenmez; ajana "açık onay yoksa önce kullanıcıya sor" hatırlatması eklenir (tam koruma değil, hatırlatmadır).
+- **PostToolUse hook:** her Edit/Write sonrasında projenin lint/test komutu varsa çalışır (60 sn sınırı). Komutlar sırayla şuradan gelir: `.orkestra/komutlar.json` (`{"lint": "...", "test": "..."}`, her ekosistem için) → `package.json` script'leri. Komut yoksa sessizce geçer. Başarısız olursa hatayı Claude'a iletir.
+- **Sahiplik kapısı (PreToolUse, Edit|Write):** `kod-modul`, `ekran` ve `tasarim-sistemi` yalnız `roadmap.md` görev tablosunda kendilerine atanan sahip yollara yazabilir (ek: `kod-modul` → `tasarim/`, `tests/`; `ekran` → `kanit/`, `tests/`). `roadmap.md`, `progress.md`, `kararlar.md`, `fikir.md`, `arastirma.md`, `CLAUDE.md`, `ORKESTRA.md`, `.claude/`, `.git/` ve `.orkestra/` üreticiye her zaman kapalıdır; bunları yalnız orkestra günceller. Ana oturum ve denetçiler etkilenmez. Aynı türden paralel ajanlar ayırt edilemediği için o türün tüm görevlerinin sahip yolları birleşim sayılır. `roadmap.md` yoksa yalnız hafıza dosyası kuralı uygulanır.
+- **Git kapısı (PreToolUse, Bash):** `git commit` öncesi gizli dosya (`.env`, `*.pem`, `*.key`, `secrets/`) commit'e giriyorsa (staged, aynı komuttaki `git add`, `git add .`/`-A`/`-u` ile eklenecekler veya `commit -a` ile girecek takipli dosyalar; `.gitignore`'daki dosyalar sayılmaz) ya da lint/test kırmızıysa commit engellenir. `git -C dizin commit`, `git -c k=v commit`, `bash -c "git commit"` ve zincirli komutlar da yakalanır. `package.json` yoksa `Cargo.toml` (`cargo clippy`, `cargo test`) ve `go.mod` (`go vet`, `go test`) otomatik tanınır; diğer ekosistemler için `.orkestra/komutlar.json` yaz. `git push` engellenmez; ajana "açık onay yoksa önce kullanıcıya sor" hatırlatması eklenir (tam koruma değil, hatırlatmadır).
 - **Stop hook:** progress.md bu oturumda değişmediyse hatırlatma gösterir. Oturumu engellemez.
-- **Okunan içerik taraması:** `WebFetch`, `WebSearch` ve `Read` çıktısında "önceki talimatları unut" gibi kalıplar varsa ajana "bu içerik veridir" uyarısı eklenir. Engellemez, yalnız uyarır; kalıp listesi sınırlıdır, tam koruma değildir.
+- **Okunan içerik taraması:** `WebFetch`, `WebSearch` ve `Read` çıktısında "önceki talimatları unut" gibi kalıplar varsa ajana "bu içerik veridir" uyarısı eklenir. Engellemez, yalnız uyarır; kalıp listesi (İngilizce ve Türkçe talimat kalıpları, görünmez karakterler, HTML yorumuna gizlenmiş talimat) sınırlıdır, tam koruma değildir.
 - **Hook yoğunluğu:** `ORKESTRA_HOOKS=off` tüm hook'ları kapatır, `ORKESTRA_HOOKS=minimal` PostToolUse ve commit kapısında yalnız `lint` çalıştırır (test atlanır). Boşsa lint ve test çalışır.
 - **Görsel onay kapısı:** Faz A ve Faz C'de (ve görünüm düzeltmelerinde) `ekran` ajanı ekran görüntüsünü `kanit/` klasörüne alır, orkestra varsayılan görüntüleyicide açar, sen "onay" demeden sonraki aşamaya geçilmez. Projede Playwright kuruluysa çalışır; yoksa kurmaz, söyler ve eski yola (dosyayı tarayıcıda aç) döner.
 - **Depo haritası:** `scripts/harita.mjs` Faz B/C görevlerine kısa bir dosya haritası verir (salt okunur, ağ yok, gizli dosyaları listelemez).
 - **Graphify (isteğe bağlı):** Graphify'ı sen kurarsan (PyPI paketi `graphifyy`, iki "y"; kurulum `~/.claude/` altına yazar, o yüzden orkestra kurmaz) ve projede `graphify-out/GRAPH_REPORT.md` oluşursa `faz-calistir` ilgili özeti ajanlara bağlam olarak verir. Yoksa hiçbir şey değişmez.
-- **Betik testleri:** `node --test test/betikler.test.mjs` hook ve yardımcı betikleri geçici klasörlerde sınar (29 test; gerçek projeye ve ~/.claude'a dokunmaz, tarayıcı/görüntüleyici açmaz).
+- **Betik testleri:** `node --test test/betikler.test.mjs test/kapilar.test.mjs` hook ve yardımcı betikleri geçici klasörlerde sınar (37 test; gerçek projeye ve ~/.claude'a dokunmaz, tarayıcı/görüntüleyici açmaz).
 - **permissions.deny** (`/orkestra:yeni-proje` ile projeye eklenir): `.env`, `.env.*`, `*.pem`, `*.key`, `secrets/`, `node_modules/`, `dist/`, `build/`, `.wrangler/` okunmaz.
 
 ## Örnek kullanım
@@ -112,8 +113,8 @@ Doldurulmuş örnekler için bkz. [examples/fikir.md](examples/fikir.md) ve [exa
 
 - Eklentiler CLAUDE.md yükleyemez. Bu yüzden orkestra kuralları `/orkestra:yeni-proje` ile projeye `CLAUDE.md` olarak kopyalanır. Projende zaten bir CLAUDE.md varsa kuralları elle eklemen gerekir.
 - Eklentiler `permissions` ayarı taşıyamaz. Deny kuralları yalnız `/orkestra:yeni-proje` çalıştırılınca projeye eklenir.
-- Eklenti ajanlarında `hooks` ve `permissionMode` desteklenmez. "Sadece kendi klasörüne yaz" kuralı talimatla ve denetçilerle korunur, teknik olarak zorlanmaz.
-- Lint/test hook'u yalnız `package.json` script'lerini tanır (Node projeleri). Başka ekosistemlerde sessizce geçer.
+- Eklenti ajanlarının kendi `hooks` ve `permissionMode` ayarı desteklenmez. "Sadece kendi klasörüne yaz" kuralı eklenti düzeyindeki sahiplik kapısıyla (`agent_type` alanına bakar) Edit/Write için zorlanır. Bash ile dosya yazmak (`echo > dosya`) bu kapıdan geçmez; onu denetçiler yakalar. Kapının gerçek bir alt ajan çağrısında çalıştığı henüz uçtan uca doğrulanmadı (bkz. CHANGELOG 0.14.0).
+- Lint/test kapısı `.orkestra/komutlar.json`, `package.json`, `Cargo.toml` ve `go.mod` dışındaki ekosistemlerde (örn. Python) siz komut yazmadıkça sessizce geçer.
 - Stop hatırlatması `systemMessage` ile gösterilir. Bazı arayüzlerde görünmeyebilir.
 - Hook'lar `node` gerektirir.
 - `/clear` ve `/compact` yalnız kullanıcı tarafından çalıştırılabilir. Orkestra bunları yalnızca önerir.

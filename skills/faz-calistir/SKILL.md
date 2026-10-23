@@ -45,7 +45,7 @@ Tasarım: (Faz B, tasarim/<ID>.md ONAYLI ise yolu)
 
 ## 2. Denetle
 Her üretici raporundan sonra fazın denetçilerini (paralel) çağır:
-- A: `orkestra:denetci-tasarim`
+- A: `orkestra:denetci-tasarim`. Ek: `design-*.html` dosyalarında `<script`, `fetch(`, `localStorage` veya harici `http(s)://` adresi (Google Fonts bağlantısı hariç) Grep ile bulunursa `orkestra:denetci-guvenlik` de çağır (gizli bilgi, dışarı veri sızdıran betik); bulunmazsa çağırma.
 - B: `orkestra:denetci-kod`, `orkestra:denetci-guvenlik`, `orkestra:denetci-hafiza`
 - C: `orkestra:denetci-tasarim`, `orkestra:denetci-guvenlik`
 

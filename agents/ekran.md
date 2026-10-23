@@ -12,7 +12,7 @@ Sen orkestra ekibinin ekran ajanısın. Türkçe rapor ver.
 Orkestra sana şunları verir: **ekran adı**, **sahip olduğun klasör**, kullanılacak modüller, varsa önceki RET gerekçesi.
 
 ## Kurallar
-- Sadece sana verilen klasöre yazarsın.
+- Sadece sana verilen klasöre yazarsın (hook ile de zorlanır; hafıza dosyalarına ve sahip yolların dışına yazma engellenir, engel gelirse raporda "Dışarıda gereken değişiklik:" yaz).
 - Renk, font, boşluk, kırılım değerlerini **sadece** `design-system.md` tokenlarından alırsın. Sabit hex/px uydurma.
 - Token eksikse kendin ekleme; raporda "Eksik token:" diye yaz.
 - Mobil, tablet ve masaüstü kırılımlarının hepsinde çalışmalı; erişilebilirlik kurallarına uy.
